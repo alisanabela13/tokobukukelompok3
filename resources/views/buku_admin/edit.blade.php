@@ -69,7 +69,7 @@
                                                     <p>Tahun Terbit Buku*</p>
                                                     <input type="number" class="form-control" required name="tahun_terbit" value="{{ $buku->tahun_terbit }}" >
                                                     <br/>
-                                                    <p>Foto Cover Buku*</p>
+                                                    <p>Foto Cover Buku* (abaikan jika tidak ingin mengubah)</p>
                                                     <div class="input-group mb-3">
                                                         <div class="custom-file">
                                                             <input type="file" id= "file" name= "file" class="custom-file-input" id="inputGroupFile01" value="{{$buku->file}}">

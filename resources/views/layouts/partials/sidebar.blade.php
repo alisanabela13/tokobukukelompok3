@@ -2,11 +2,11 @@
     <aside id="sidebar-wrapper">
       <div class="sidebar-brand mt-2 mb-3">
           <a href="{{route('home')}}" class="site_title">
-            <img src="{{ asset('assets/img/logo.png') }}" alt="logo thortech project" class="img-fluid" style="height: 3rem;">
+            {{-- <img src="{{ asset('assets/img/logo.png') }}" alt="logo thortech project" class="img-fluid" style="height: 3rem;"> --}}
         </a>
       </div>
       <div class="sidebar-brand sidebar-brand-sm">
-        <a href="{{route('home')}}"><img src="{{asset('img/landingpage/logo.png')}}"  width="50px" alt=""></a>
+        {{-- <a href="{{route('home')}}"><img src="{{asset('img/landingpage/logo.png')}}"  width="50px" alt=""></a> --}}
       </div>
       <br/>
       <ul class="sidebar-menu">
