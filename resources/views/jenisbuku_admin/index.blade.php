@@ -37,7 +37,7 @@ Penerbit Buku
                                       @foreach ($jenisbuku as $j)
                                       <tr>
                                       <td>{{$loop->index+1}}</td>
-                                      <td>{{$j->jenis_buku}}</td>
+                                      <td>{{$j->name}}</td>
                                   <td>
                                       <div class="btn-group">
                                         <a type="submit" class="btn btn-sm btn-info text-white" href="{{ route('jenisbuku.edit',  ['id' => $j["id"]]) }}"><i class="fas fa-pencil-alt"></i></a>

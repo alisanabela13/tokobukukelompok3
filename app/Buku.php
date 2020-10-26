@@ -9,34 +9,34 @@ class Buku extends Model
     protected $fillable = [
         'file',
         'isbn',
-        'judul_buku',
-        'penulis_id',
-        'penerbit_id',
-        'jenis_buku_id',
-        'suplier_id',
+        'judul',
+        'id_penulis',
+        'id_penerbit',
+        'name_id',
+        'id_suplier',
         'tahun_terbit',
         'harga_beli',
         'harga_jual',
-        'jumlah_stok'
+        'jumlah'
     ];
     public function penulis()
     {
-        return $this->belongsTo(Penulis::class, 'penulis_id');
+        return $this->belongsTo(Penulis::class, 'id_penulis');
     }
 
     public function penerbit()
     {
-        return $this->belongsTo(Penerbit::class, 'penerbit_id');
+        return $this->belongsTo(Penerbit::class, 'id_penerbit');
     }
 
     public function jenisbuku()
     {
-        return $this->belongsTo(Jenisbuku::class, 'jenisbuku_id');
+        return $this->belongsTo(Jenisbuku::class, 'id_jenisbuku');
     }
 
     public function suplier()
     {
-        return $this->belongsTo(Suplier::class, 'suplier_id');
+        return $this->belongsTo(Suplier::class, 'id_suplier');
     }
 
 }

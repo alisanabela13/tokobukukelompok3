@@ -29,37 +29,37 @@
                                                     <input type="number" class="form-control" required name="isbn" value="{{ $buku->isbn }}" >
                                                     <br/>
                                                     <p>Judul Buku*</p>
-                                                    <input type="text" class="form-control" required name="judul_buku" value="{{ $buku->judul_buku }}" >
+                                                    <input type="text" class="form-control" required name="judul" value="{{ $buku->judul }}" >
                                                     <br/>
                                                     <p>Jenis Buku*</p>
-                                                    <select required name="jenisbuku_id" class="form-control" value="{{ old('jenisbuku_id') }}">
+                                                    <select required name="id_jenisbuku" class="form-control" value="{{ old('id_jenisbuku') }}">
                                                         <option value=''>- Pilih -</option>
                                                         @foreach($jenisbuku as $jen)
-                                                            <option value="{{ $jen['id'] }}" {{$jen->id == $buku->jenisbuku_id ?  'selected' : ''}}> {{$jen->jenis_buku}} </option>
+                                                            <option value="{{ $jen['id'] }}" {{$jen->id == $buku->id_jenisbuku ?  'selected' : ''}}> {{$jen->name}} </option>
                                                         @endforeach
                                                     </select>
                                                     <br/>
                                                     <p>Nama Penulis*</p>
-                                                    <select required name="penulis_id" class="form-control" value="{{ old('penulis_id') }}">
+                                                    <select required name="id_penulis" class="form-control" value="{{ old('id_penulis') }}">
                                                         <option value=''>- Pilih -</option>
                                                         @foreach($penulis as $pel)
-                                                            <option value="{{ $pel['id'] }}" {{$pel->id == $buku->penulis_id ?  'selected' : ''}}> {{$pel->nama_penulis}} </option>
+                                                            <option value="{{ $pel['id'] }}" {{$pel->id == $buku->id_penulis ?  'selected' : ''}}> {{$pel->nama}} </option>
                                                         @endforeach
                                                     </select>
                                                     <br/>
                                                     <p>Nama Penerbit*</p>
-                                                    <select required name="penerbit_id" class="form-control" value="{{ old('penerbit_id') }}">
+                                                    <select required name="id_penerbit" class="form-control" value="{{ old('id_penerbit') }}">
                                                         <option value=''>- Pilih -</option>
                                                         @foreach($penerbit as $per)     
-                                                            <option value="{{ $per['id'] }}" {{$per->id == $buku->penerbit_id ?  'selected' : ''}}> {{$per->nama_penerbit}} </option>
+                                                            <option value="{{ $per['id'] }}" {{$per->id == $buku->id_penerbit ?  'selected' : ''}}> {{$per->nama}} </option>
                                                         @endforeach
                                                     </select>
                                                     <br/>
                                                     <p>Suplier*</p>
-                                                    <select required name="suplier_id" class="form-control" value="{{ old('suplier_id') }}">
+                                                    <select required name="id_suplier" class="form-control" value="{{ old('id_suplier') }}">
                                                         <option value=''>- Pilih -</option>
                                                         @foreach($suplier as $sup)     
-                                                            <option value="{{ $sup['id'] }}" {{$sup->id == $buku->suplier_id ?  'selected' : ''}}> {{$sup->nama_suplier}} </option>
+                                                            <option value="{{ $sup['id'] }}" {{$sup->id == $buku->id_suplier ?  'selected' : ''}}> {{$sup->nama}} </option>
                                                         @endforeach
                                                     </select>
                                                 </div>
@@ -83,10 +83,10 @@
                                                     <input type="number" class="form-control" required name="harga_jual" value="{{ $buku->harga_jual }}" >
                                                     <br/>
                                                     <p>Rak Buku*</p>
-                                                    <input type="text" class="form-control" required name="rak_buku" value="{{ $buku->rak_buku }}" >
+                                                    <input type="text" class="form-control" required name="lokasi" value="{{ $buku->lokasi }}" >
                                                     <br/>
                                                     <p>Jumlah Stok Saat Ini*</p>
-                                                    <input type="number" class="form-control" required name="jumlah_stok" value="{{ $buku->jumlah_stok }}" >
+                                                    <input type="number" class="form-control" required name="jumlah" value="{{ $buku->jumlah }}" >
                                                     
                                                 </div>
                                             </div>

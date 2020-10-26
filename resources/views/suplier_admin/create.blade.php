@@ -25,7 +25,7 @@
                                             <div class="col-md-6">
                                                 <div class="form-group">
                                                     <p>Nama Suplier*</p>
-                                                    <input type="text" class="form-control" required name="nama_suplier" value="{{ old('nama_suplier') }}" >
+                                                    <input type="text" class="form-control" required name="nama" value="{{ old('nama') }}" >
                                                     <p>No HP*</p>
                                                     <input type="number" class="form-control" required name="no_hp" value="{{ old('no_hp') }}" >
                                                     <p>E-Mail*</p>
@@ -35,7 +35,7 @@
                                             <div class="col-md-6">
                                                 <div class="form-group">
                                                     <p>Alamat Suplier*</p>
-                                                    <textarea type="text" class="form-control" required name="alamat_suplier" value="{{ old('alamat_suplier') }}" style="height:215px"></textarea>
+                                                    <textarea type="text" class="form-control" required name="alamat" value="{{ old('alamat') }}" style="height:215px"></textarea>
                                                 </div>
                                             </div>
                                           </div>

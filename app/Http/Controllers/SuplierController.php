@@ -26,16 +26,16 @@ class SuplierController extends Controller
     public function store(Request $request)
     {
         $validate = $request->validate([
-            'nama_suplier' => 'required',
-            'alamat_suplier' => 'required',
+            'nama' => 'required',
+            'alamat' => 'required',
             'email' => 'required',
             'no_hp' => 'required'
         ]);
 
        
         $insert = Suplier::insert([
-            'nama_suplier' => $request->nama_suplier,
-            'alamat_suplier' => $request->alamat_suplier,
+            'nama' => $request->nama,
+            'alamat' => $request->alamat,
             'email' => $request->email,
             'no_hp' => $request->no_hp
         ]);
@@ -57,15 +57,15 @@ class SuplierController extends Controller
     public function update(Request $request, $id)
     {
         $validate = $request->validate([
-            'nama_suplier' => 'required',
-            'alamat_suplier' => 'required',
+            'nama' => 'required',
+            'alamat' => 'required',
             'email' => 'required',
             'no_hp' => 'required'
         ]);
 
         $update = Suplier::where('id', $id)->update([
-            'nama_suplier' => $request->nama_suplier,
-            'alamat_suplier' => $request->alamat_suplier,
+            'nama' => $request->nama,
+            'alamat' => $request->alamat,
             'email' => $request->email,
             'no_hp' => $request->no_hp
         ]);

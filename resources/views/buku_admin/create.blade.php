@@ -28,37 +28,37 @@
                                                     <input type="number" class="form-control" required name="isbn" value="{{ old('isbn') }}" >
                                                     <br/>
                                                     <p>Judul Buku*</p>
-                                                    <input type="text" class="form-control" required name="judul_buku" value="{{ old('judul_buku') }}" >
+                                                    <input type="text" class="form-control" required name="judul" value="{{ old('judul') }}" >
                                                     <br/>
                                                     <p>Jenis Buku*</p>
-                                                    <select required name="jenisbuku_id" class="form-control" value="{{ old('jenisbuku_id') }}">
+                                                    <select required name="id_jenisbuku" class="form-control" value="{{ old('id_jenisbuku') }}">
                                                         <option value=''>- Pilih -</option>
                                                         @foreach($jenisbuku as $jen)
-                                                            <option value="{{ $jen['id'] }}"> {{$jen->jenis_buku}} </option>
+                                                            <option value="{{ $jen['id'] }}"> {{$jen->name}} </option>
                                                         @endforeach
                                                     </select>
                                                     <br/>
                                                     <p>Nama Penulis*</p>
-                                                    <select required name="penulis_id" class="form-control" value="{{ old('penulis_id') }}">
+                                                    <select required name="id_penulis" class="form-control" value="{{ old('id_penulis') }}">
                                                         <option value=''>- Pilih -</option>
                                                         @foreach($penulis as $pel)
-                                                            <option value="{{ $pel['id'] }}"> {{$pel->nama_penulis}} </option>
+                                                            <option value="{{ $pel['id'] }}"> {{$pel->nama}} </option>
                                                         @endforeach
                                                     </select>
                                                     <br/>
                                                     <p>Nama Penerbit*</p>
-                                                    <select required name="penerbit_id" class="form-control" value="{{ old('penerbit_id') }}">
+                                                    <select required name="id_penerbit" class="form-control" value="{{ old('id_penerbit') }}">
                                                         <option value=''>- Pilih -</option>
                                                         @foreach($penerbit as $per)     
-                                                            <option value="{{ $per['id'] }}"> {{$per->nama_penerbit}} </option>
+                                                            <option value="{{ $per['id'] }}"> {{$per->nama}} </option>
                                                         @endforeach
                                                     </select>
                                                     <br/>
                                                     <p>Suplier*</p>
-                                                    <select required name="suplier_id" class="form-control" value="{{ old('suplier_id') }}">
+                                                    <select required name="id_suplier" class="form-control" value="{{ old('id_suplier') }}">
                                                         <option value=''>- Pilih -</option>
                                                         @foreach($suplier as $sup)     
-                                                            <option value="{{ $sup['id'] }}"> {{$sup->nama_suplier}} </option>
+                                                            <option value="{{ $sup['id'] }}"> {{$sup->nama}} </option>
                                                         @endforeach
                                                     </select>
                                                 </div>
@@ -82,10 +82,10 @@
                                                     <input type="number" class="form-control" required name="harga_jual" value="{{ old('harga_jual') }}" >
                                                     <br/>
                                                     <p>Rak Buku*</p>
-                                                    <input type="text" class="form-control" required name="rak_buku" value="{{ old('rak_buku') }}" >
+                                                    <input type="text" class="form-control" required name="lokasi" value="{{ old('lokasi') }}" >
                                                     <br/>
                                                     <p>Jumlah Stok Saat Ini*</p>
-                                                    <input type="number" class="form-control" required name="jumlah_stok" value="{{ old('jumlah_stok') }}" >
+                                                    <input type="number" class="form-control" required name="jumlah" value="{{ old('jumlah') }}" >
                                                     
                                                 </div>
                                             </div>

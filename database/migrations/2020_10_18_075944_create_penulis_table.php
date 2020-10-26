@@ -15,7 +15,7 @@ class CreatePenulisTable extends Migration
     {
         Schema::create('penulis', function (Blueprint $table) {
             $table->bigIncrements('id');
-            $table->string('nama_penulis');
+            $table->string('nama');
             $table->timestamps();
         });
     }

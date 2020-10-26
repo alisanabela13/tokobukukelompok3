@@ -15,8 +15,8 @@ class CreateSupliersTable extends Migration
     {
         Schema::create('supliers', function (Blueprint $table) {
             $table->bigIncrements('id');
-            $table->string('nama_suplier');
-            $table->text('alamat_suplier');
+            $table->string('nama');
+            $table->text('alamat');
             $table->string('email');
             $table->string('no_hp');
             $table->timestamps();

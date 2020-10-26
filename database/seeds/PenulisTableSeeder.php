@@ -12,16 +12,16 @@ class PenulisTableSeeder extends Seeder
     public function run()
     {
         App\Penulis::create([
-            'nama_penulis' => 'Risa Saraswati'
+            'nama' => 'Risa Saraswati'
         ]);
         App\Penulis::create([
-            'nama_penulis' => 'Tere Liye'
+            'nama' => 'Tere Liye'
         ]);
         App\Penulis::create([
-            'nama_penulis' => 'Rahimsyah'
+            'nama' => 'Rahimsyah'
         ]);
         App\Penulis::create([
-            'nama_penulis' => 'Lee Dae Han'
+            'nama' => 'Lee Dae Han'
         ]);
     }
 }

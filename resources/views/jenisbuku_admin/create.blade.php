@@ -25,7 +25,7 @@
                                             <div class="col-md-6">
                                                 <div class="form-group">
                                                     <p>Nama Jenis Buku*</p>
-                                                    <input type="text" class="form-control" required name="jenis_buku" value="{{ old('jenis_buku') }}" >
+                                                    <input type="text" class="form-control" required name="name" value="{{ old('name') }}" >
                                                 </div>
                                             </div>
                                         </div>

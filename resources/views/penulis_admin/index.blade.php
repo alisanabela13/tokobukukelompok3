@@ -37,7 +37,7 @@ Penulis Buku
                                       @foreach ($penulis as $p)
                                       <tr>
                                       <td>{{$loop->index+1}}</td>
-                                      <td>{{$p->nama_penulis}}</td>
+                                      <td>{{$p->nama}}</td>
                                   <td>
                                       <div class="btn-group">
                                         <a type="submit" class="btn btn-sm btn-info text-white" href="{{ route('penulis.edit',  ['id' => $p["id"]]) }}"><i class="fas fa-pencil-alt"></i></a>

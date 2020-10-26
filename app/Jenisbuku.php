@@ -7,10 +7,10 @@ use Illuminate\Database\Eloquent\Model;
 class Jenisbuku extends Model
 {
     protected $fillable = [
-        'jenis_buku'
+        'name'
     ];
     public function buku()
     {
-        return $this->hasMany(Buku::class, 'jenis_buku_id');
+        return $this->hasMany(Buku::class, 'name_id');
     }
 }

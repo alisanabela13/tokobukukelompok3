@@ -26,7 +26,7 @@
                                     <div class="col-md-6">
                                         <div class="form-group">
                                             <p>Jenis Buku*</p>
-                                        <input type="text" class="form-control" required name="jenis_buku" value="{{$jenisbuku->jenis_buku}}" >
+                                        <input type="text" class="form-control" required name="name" value="{{$jenisbuku->name}}" >
                                         </div>
                                     </div>
                                 </div> --}}
@@ -34,7 +34,7 @@
                                     <div class="col-md-6">
                                         <div class="form-group">
                                             <p>Nama Suplier*</p>
-                                        <input type="text" class="form-control" required name="nama_suplier" value="{{$suplier->nama_suplier}}" >
+                                        <input type="text" class="form-control" required name="nama" value="{{$suplier->nama}}" >
                                             <p>No HP*</p>
                                             <input type="number" class="form-control" required name="no_hp" value="{{$suplier->no_hp}}" >
                                             <p>E-Mail*</p>
@@ -44,7 +44,7 @@
                                     <div class="col-md-6">
                                         <div class="form-group">
                                             <p>Alamat Suplier*</p>
-                                        <textarea type="text" class="form-control" required name="alamat_suplier"  style="height:215px">{{$suplier->alamat_suplier}}</textarea>
+                                        <textarea type="text" class="form-control" required name="alamat"  style="height:215px">{{$suplier->alamat}}</textarea>
                                         </div>
                                     </div>
                                   </div>

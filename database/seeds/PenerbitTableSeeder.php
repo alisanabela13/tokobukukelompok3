@@ -12,16 +12,16 @@ class PenerbitTableSeeder extends Seeder
     public function run()
     {
         App\Penerbit::create([
-            'nama_penerbit' => 'UPP STIM YKPN'
+            'nama' => 'UPP STIM YKPN'
         ]);
         App\Penerbit::create([
-            'nama_penerbit' => 'PT. Bukune Kreatif Cipta'
+            'nama' => 'PT. Bukune Kreatif Cipta'
         ]);
         App\Penerbit::create([
-            'nama_penerbit' => 'GagasMedia'
+            'nama' => 'GagasMedia'
         ]);
         App\Penerbit::create([
-            'nama_penerbit' => 'CV. ITA Surakarta'
+            'nama' => 'CV. ITA Surakarta'
         ]);
     }
 }

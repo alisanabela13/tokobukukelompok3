@@ -25,12 +25,12 @@ class PenerbitController extends Controller
     public function store(Request $request)
     {
         $validate = $request->validate([
-            'nama_penerbit' => 'required'
+            'nama' => 'required'
         ]);
 
        
         $insert = Penerbit::insert([
-            'nama_penerbit' => $request->nama_penerbit
+            'nama' => $request->nama
         ]);
 
         if($insert == true ){
@@ -50,11 +50,11 @@ class PenerbitController extends Controller
     public function update(Request $request, $id)
     {
         $validate = $request->validate([
-            'nama_penerbit' => 'required'
+            'nama' => 'required'
         ]);
 
         $update = Penerbit::where('id', $id)->update([
-            'nama_penerbit' => $request->nama_penerbit
+            'nama' => $request->nama
         ]);
 
         if($update == true) {

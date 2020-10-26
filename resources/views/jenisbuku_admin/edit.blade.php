@@ -26,7 +26,7 @@
                                     <div class="col-md-6">
                                         <div class="form-group">
                                             <p>Jenis Buku*</p>
-                                        <input type="text" class="form-control" required name="jenis_buku" value="{{$jenisbuku->jenis_buku}}" >
+                                        <input type="text" class="form-control" required name="name" value="{{$jenisbuku->name}}" >
                                         </div>
                                     </div>
                                 </div>

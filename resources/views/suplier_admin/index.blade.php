@@ -40,8 +40,8 @@ Suplier Buku
                                       @foreach ($suplier as $s)
                                       <tr>
                                       <td>{{$loop->index+1}}</td>
-                                      <td>{{$s->nama_suplier}}</td>
-                                      <td>{{$s->alamat_suplier}}</td>
+                                      <td>{{$s->nama}}</td>
+                                      <td>{{$s->alamat}}</td>
                                       <td>{{$s->email}}</td>
                                       <td>{{$s->no_hp}}</td>
                                   <td>

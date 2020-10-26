@@ -7,13 +7,13 @@ use Illuminate\Database\Eloquent\Model;
 class Suplier extends Model
 {
     protected $fillable = [
-        'nama_suplier',
-        'alamat_suplier',
+        'nama',
+        'alamat',
         'email',
         'no_hp'
     ];
     public function buku()
     {
-        return $this->hasMany(Buku::class, 'suplier_id');
+        return $this->hasMany(Buku::class, 'id_suplier');
     }
 }

@@ -26,7 +26,7 @@
                                     <div class="col-md-6">
                                         <div class="form-group">
                                             <p>Nama Penerbit*</p>
-                                        <input type="text" class="form-control" required name="nama_penerbit" value="{{$penerbit->nama_penerbit}}" >
+                                        <input type="text" class="form-control" required name="nama" value="{{$penerbit->nama}}" >
                                         </div>
                                     </div>
                                 </div>

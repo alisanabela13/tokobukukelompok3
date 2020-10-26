@@ -26,12 +26,12 @@ class JenisbukuController extends Controller
     public function store(Request $request)
     {
         $validate = $request->validate([
-            'jenis_buku' => 'required'
+            'name' => 'required'
         ]);
 
        
         $insert = Jenisbuku::insert([
-            'jenis_buku' => $request->jenis_buku
+            'name' => $request->name
         ]);
 
         if($insert == true ){
@@ -51,11 +51,11 @@ class JenisbukuController extends Controller
     public function update(Request $request, $id)
     {
         $validate = $request->validate([
-            'jenis_buku' => 'required'
+            'name' => 'required'
         ]);
 
         $update = Jenisbuku::where('id', $id)->update([
-            'jenis_buku' => $request->jenis_buku
+            'name' => $request->name
         ]);
 
         if($update == true) {

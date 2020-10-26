@@ -23,12 +23,12 @@ class PenulisController extends Controller
     public function store(Request $request)
     {
         $validate = $request->validate([
-            'nama_penulis' => 'required'
+            'nama' => 'required'
         ]);
 
        
         $insert = Penulis::insert([
-            'nama_penulis' => $request->nama_penulis
+            'nama' => $request->nama
         ]);
 
         if($insert == true ){
@@ -48,11 +48,11 @@ class PenulisController extends Controller
     public function update(Request $request, $id)
     {
         $validate = $request->validate([
-            'nama_penulis' => 'required'
+            'nama' => 'required'
         ]);
 
         $update = Penulis::where('id', $id)->update([
-            'nama_penulis' => $request->nama_penulis
+            'nama' => $request->nama
         ]);
 
         if($update == true) {

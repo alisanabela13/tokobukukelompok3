@@ -39,16 +39,16 @@ class BukuController extends Controller
         $validate = $request->validate([
             'file' => 'required|mimes:png,jpg,jpeg|max:2048',
             'isbn' => 'required',
-            'judul_buku' => 'required',
-            'penulis_id' => 'required',
-            'penerbit_id' => 'required', 
-            'jenisbuku_id' => 'required',
-            'suplier_id' => 'required',
+            'judul' => 'required',
+            'id_penulis' => 'required',
+            'id_penerbit' => 'required', 
+            'id_jenisbuku' => 'required',
+            'id_suplier' => 'required',
             'tahun_terbit' => 'required',
             'harga_beli' => 'required',
             'harga_jual' => 'required',
-            'rak_buku' => 'required',
-            'jumlah_stok' => 'required'
+            'lokasi' => 'required',
+            'jumlah' => 'required'
 
         ]);
         
@@ -59,16 +59,16 @@ class BukuController extends Controller
         $insert = Buku::insert([
             'file' => $get_name,
             'isbn' => $request->isbn,
-            'judul_buku' => $request->judul_buku,
-            'penulis_id' => $request->penulis_id,
-            'penerbit_id' => $request->penerbit_id,
-            'jenisbuku_id' => $request->jenisbuku_id,
-            'suplier_id' => $request->suplier_id,
+            'judul' => $request->judul,
+            'id_penulis' => $request->id_penulis,
+            'id_penerbit' => $request->id_penerbit,
+            'id_jenisbuku' => $request->id_jenisbuku,
+            'id_suplier' => $request->id_suplier,
             'tahun_terbit' => $request->tahun_terbit,
             'harga_beli' => $request->harga_beli,
             'harga_jual' => $request->harga_jual,
-            'rak_buku' => $request->rak_buku,
-            'jumlah_stok' => $request->jumlah_stok,
+            'lokasi' => $request->lokasi,
+            'jumlah' => $request->jumlah,
 
 
         ]);
@@ -96,16 +96,16 @@ class BukuController extends Controller
         $validate = $request->validate([
             'file' => 'max:2048',
             'isbn' => 'required',
-            'judul_buku' => 'required',
-            'penulis_id' => 'required',
-            'penerbit_id' => 'required',
-            'jenisbuku_id' => 'required',
-            'suplier_id' => 'required',
+            'judul' => 'required',
+            'id_penulis' => 'required',
+            'id_penerbit' => 'required',
+            'id_jenisbuku' => 'required',
+            'id_suplier' => 'required',
             'tahun_terbit' => 'required',
             'harga_beli' => 'required',
             'harga_jual' => 'required',
-            'rak_buku' => 'required',
-            'jumlah_stok' => 'required',
+            'lokasi' => 'required',
+            'jumlah' => 'required',
         ]);
 
         if ( $request->file ) {
@@ -119,16 +119,16 @@ class BukuController extends Controller
           $update = $buku->update([
             'file' => $request->file ? $get_name : $buku->first()->file,
             'isbn' => $request->isbn,
-            'judul_buku' => $request->judul_buku,
-            'penulis_id' => $request->penulis_id,
-            'penerbit_id' => $request->penerbit_id,
-            'jenisbuku_id' => $request->jenisbuku_id,
-            'suplier_id' => $request->suplier_id,
+            'judul' => $request->judul,
+            'id_penulis' => $request->id_penulis,
+            'id_penerbit' => $request->id_penerbit,
+            'id_jenisbuku' => $request->id_jenisbuku,
+            'id_suplier' => $request->id_suplier,
             'tahun_terbit' => $request->tahun_terbit,
             'harga_beli' => $request->harga_beli,
             'harga_jual' => $request->harga_jual,
-            'rak_buku' => $request->rak_buku,
-            'jumlah_stok' => $request->jumlah_stok
+            'lokasi' => $request->lokasi,
+            'jumlah' => $request->jumlah
 
         ]);
 

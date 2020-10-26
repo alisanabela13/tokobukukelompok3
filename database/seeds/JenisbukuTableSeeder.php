@@ -12,13 +12,13 @@ class JenisbukuTableSeeder extends Seeder
     public function run()
     {
         App\Jenisbuku::create([
-            'jenis_buku' => 'Novel'
+            'name' => 'Novel'
         ]);
         App\Jenisbuku::create([
-            'jenis_buku' => 'Komik'
+            'name' => 'Komik'
         ]);
         App\Jenisbuku::create([
-            'jenis_buku' => 'Buku Ilmu Pengetahuan'
+            'name' => 'Buku Ilmu Pengetahuan'
         ]);
     }
 }
