@@ -27,7 +27,13 @@
                                                     Nama*
                                                     <input type="text" class="form-control" required name="name" value="{{ old('name') }}" ><br/>
                                                     Username*
-                                                    <input type="text" class="form-control" required name="username" value="{{ old('username') }}"><br/>
+                                                    <input type="text" class="form-control @error('username') is-invalid @enderror" required name="username" value="{{ old('username') }}">
+                                                    @error('username')
+                                                            <span class="invalid-feedback" role="alert">
+                                                                <strong>{{ $message }}</strong>
+                                                            </span>
+                                                    @enderror
+                                                    <br/>
                                                     Posisi*
                                                     <select name="posisi" class="form-control">
                                                         <option value=''>--- Pilih Posisi ---</option>
@@ -36,7 +42,13 @@
                                                         <option value="Kasir">Kasir</option>
                                                     </select><br/>
                                                     E-Mail*
-                                                    <input type="text" class="form-control" required name="email" value="{{ old('email') }}"><br/>
+                                                    <input type="email" class="form-control @error('email') is-invalid @enderror" required name="email" value="{{ old('email') }}">
+                                                    @error('email')
+                                                            <span class="invalid-feedback" role="alert">
+                                                                <strong>{{ $message }}</strong>
+                                                            </span>
+                                                    @enderror
+                                                    <br/>
                                                     Telepon*
                                                     <input type="number" class="form-control" required name="telepon" value="{{ old('telepon') }}">
                                                 </div>
