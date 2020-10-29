@@ -27,7 +27,7 @@
                                                 <div class="card-header"><h4>Detail Buku</h4></div>
                                                 <div class="card-body">
                                                     <div class="row mb-4">
-                                                        <div class="col-lg-4 col-5">JUDUL BUKU</div>
+                                                        <div class="col-lg-4 col-5">Judul</div>
                                                         <div class="col-1 text-right">:</div>
                                                         <div class="col-lg-6 col-5">{{strtoupper($buku->judul)}}</div>
                                                     </div>
@@ -37,46 +37,41 @@
                                                         <div class="col-lg-6 col-5">{{strtoupper($buku->isbn)}}</div>
                                                     </div>
                                                     <div class="row mb-4">
-                                                        <div class="col-lg-4 col-5">KATEGORI</div>
+                                                        <div class="col-lg-4 col-5">Kategori</div>
                                                         <div class="col-1 text-right">:</div>
-                                                        <div class="col-lg-6 col-5">{{strtoupper($buku->kategori->name)}}</div>
+                                                        <div class="col-lg-6 col-5">{{strtoupper($buku->kategori ? $buku->kategori->name : '')}}</div>
                                                     </div>
                                                     
                                                     <div class="row mb-4">
-                                                        <div class="col-lg-4 col-5">PENULIS</div>
+                                                        <div class="col-lg-4 col-5">Penulis</div>
                                                         <div class="col-1 text-right">:</div>
-                                                        <div class="col-lg-6 col-5">{{strtoupper($buku->penulis->nama)}}</div>
+                                                        <div class="col-lg-6 col-5">{{strtoupper($buku->penulis ? $buku->penulis->nama : '')}}</div>
                                                     </div>
                                                     <div class="row mb-4">
-                                                        <div class="col-lg-4 col-5">PENERBIT</div>
+                                                        <div class="col-lg-4 col-5">Penerbit</div>
                                                         <div class="col-1 text-right">:</div>
-                                                        <div class="col-lg-6 col-5">{{strtoupper($buku->penerbit->nama)}}</div>
+                                                        <div class="col-lg-6 col-5">{{strtoupper($buku->penerbit ? $buku->penerbit->nama : '')}}</div>
                                                     </div>
                                                     <div class="row mb-4">
-                                                        <div class="col-lg-4 col-5">TAHUN TERBIT</div>
+                                                        <div class="col-lg-4 col-5">Tahun Terbit</div>
                                                         <div class="col-1 text-right">:</div>
                                                         <div class="col-lg-6 col-5">{{$buku->tahun_terbit}}</div>
                                                     </div>
                                                     <div class="row mb-4">
-                                                        <div class="col-lg-4 col-5">Pemasok BUKU</div>
+                                                        <div class="col-lg-4 col-5">Pemasok</div>
                                                         <div class="col-1 text-right">:</div>
-                                                        <div class="col-lg-6 col-5">{{strtoupper($buku->Pemasok->nama)}}</div>
+                                                        <div class="col-lg-6 col-5">{{strtoupper($buku->pemasok ? $buku->pemasok->nama : '')}}</div>
                                                     </div>
                                                     
                                                     <div class="row mb-4">
-                                                        <div class="col-lg-4 col-5">HARGA BELI (Per buku)</div>
+                                                        <div class="col-lg-4 col-5">Harga (Per buku)</div>
                                                         <div class="col-1 text-right">:</div>
-                                                        <div class="col-lg-6 col-5">Rp. {{$buku->harga_beli}},00</div>
-                                                    </div>
-                                                    <div class="row mb-4">
-                                                        <div class="col-lg-4 col-5">HARGA JUAL (Per buku)</div>
-                                                        <div class="col-1 text-right">:</div>
-                                                        <div class="col-lg-6 col-5">Rp. {{$buku->harga_jual}},00</div>
+                                                        <div class="col-lg-6 col-5">Rp. {{$buku->harga}},00</div>
                                                     </div>
                                                     <div class="row mb-4">
                                                         <div class="col-lg-4 col-5">Jumlah Stok Buku Saat ini</div>
                                                         <div class="col-1 text-right">:</div>
-                                                        <div class="col-lg-6 col-5">{{$buku->jumlah}} BUKU</div>
+                                                        <div class="col-lg-6 col-5">{{$buku->jumlah}} buku</div>
                                                     </div>
                                                     <div class="row mb-4">
                                                         <div class="col-lg-4 col-5">RAK BUKU</div>

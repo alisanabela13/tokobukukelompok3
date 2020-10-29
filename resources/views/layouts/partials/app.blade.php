@@ -80,8 +80,8 @@
           e.preventDefault();
           var form = $(this).parent();
           Swal.fire({
-              title: 'Hapus?',
-              text: "Data Tidak Dapat kembali!",
+              title: 'Apakah anda yakin ingin menghapus data tersebut?',
+              text: "Data yang ingin dihapus kemungkinan berkaitan dengan data lainnya dan tidak dapat dikembalikan lagi",
               icon: 'warning',
               showCancelButton: true,
               confirmButtonColor: '#3085d6',

@@ -2,8 +2,11 @@
 
 namespace App\Http\Controllers;
 
+use App\Buku;
 use Illuminate\Http\Request;
 use App\Pemasok;
+use Exception;
+use Illuminate\Support\Facades\DB;
 
 class PemasokController extends Controller
 {
@@ -78,8 +81,17 @@ class PemasokController extends Controller
     }
 
     public function destroy($id)
-    {
-        Pemasok::destroy($id);
-        return redirect()->route('pemasok', ['id' => $id]);
-    }
+	{
+		DB::beginTransaction();
+		try {
+			$pemasok = Pemasok::find($id);
+			Buku::where('id_pemasok', $id)->update(['id_pemasok' => null]);
+			$pemasok->delete();
+			DB::commit();
+			return redirect()->route('pemasok')->with(['message' => 'Berhasil Menghapus Pemasok', 'type' => 'success']);
+		} catch ( Exception $e ) {
+			DB::rollBack();
+			return redirect()->route('pemasok')->with(['message' => 'gagal Menghapus Pemasok', 'type' => 'danger']);
+		}
+	}
 }

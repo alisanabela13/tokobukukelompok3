@@ -44,7 +44,7 @@ Buku
                                       <td><img src="{{ asset('buku/'.$b->file) }}" alt="" style="width:80px; height:100px; margin-top:9px"></td>
                                       <td>{{$b->isbn}}</td>
                                       <td>{{$b->judul}}</td>
-                                      <td>{{$b->penulis->nama}}</td>
+                                      <td>{{$b->penulis ? $b->penulis->nama : ''}}</td>
                                       <td>Rp. {{$b->harga_jual}},00</td>
                                   <td>
                                       {{-- {!! Form::open(['method'=>'delete', 'route'=>['kelas.destroy',$item->id]]) !!}
