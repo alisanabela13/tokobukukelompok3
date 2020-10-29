@@ -14,6 +14,14 @@ Penerbit Buku
             <div class="content-body table">
                 <div class="row">
                     <div class="col-12 col-md-12 col-lg-12">
+                        @if ( ($message = Session::get('message')) && ($type = Session::get('type')) )
+                            <div class="alert alert-{{ $type }} alert-dismissible fade show">
+                                {{ $message }}
+                                <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                                    <span aria-hidden="true">&times;</span>
+                                </button>
+                            </div>
+                        @endif
                         <div class="card">
                             <div class="card-header">
                                 <h4>Penerbit Buku</h4>
@@ -49,6 +57,7 @@ Penerbit Buku
                                             <button  class="btn btn-sm btn-danger" id="btn-delete"  ><i class="fa fa-trash"></i></button>
                                         </form>
                                     </div>
+                                    <a type="submit" class="btn btn-sm btn-success text-white" href="{{ route('penerbit.detail',  ['id' => $p["id"]]) }}"><i class="fas fa-file"></i></a>
                                   </td>
                               </tr>
                                   @endforeach
