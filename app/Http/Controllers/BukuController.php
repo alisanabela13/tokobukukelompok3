@@ -144,7 +144,7 @@ class BukuController extends Controller
         $penerbit = Penerbit::where('id', $id)->first();
         $kategori = Kategori::where('id', $id)->first();
         $Pemasok = Pemasok::where('id', $id)->first();
-        return view('buku_admin.detail', compact('buku', 'penulis', 'penerbit', 'Kategori', 'Pemasok'));
+        return view('buku_admin.detail', compact('buku', 'penulis', 'penerbit', 'kategori', 'Pemasok'));
     }
 
     public function destroy($id)

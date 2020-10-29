@@ -15,6 +15,11 @@ Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
 
+//profil
+Route::get('/profil', 'ProfilController@index')->name('profil');
+Route::put('/profil/update', 'ProfilController@update')->name('profil.update');
+Route::put('/profil/password', 'ProfilController@changePassword')->name('profil.password');
+
 //user
 Route::get('/datauser', 'UserController@index')->name('user');
 Route::get('datauser/create', 'UserController@create')->name('user.create');
@@ -41,6 +46,7 @@ Route::delete('penulis/{id}', 'PenulisController@destroy')->name('penulis.destro
 
 //penerbit
 Route::get('/penerbit', 'PenerbitController@index')->name('penerbit');
+Route::get('/penerbit/{id}/detail', 'PenerbitController@detail')->name('penerbit.detail');
 Route::get('penerbit/create', 'PenerbitController@create')->name('penerbit.create');
 Route::post('penerbit/store', 'PenerbitController@store')->name('penerbit.store');
 Route::get('penerbit/{id}', 'PenerbitController@edit')->name('penerbit.edit');
@@ -60,3 +66,9 @@ Route::post('pemasok/store', 'PemasokController@store')->name('pemasok.store');
 Route::get('pemasok/{id}', 'PemasokController@edit')->name('pemasok.edit');
 Route::put('pemasok/{id}/update', 'PemasokController@update')->name('pemasok.update');
 Route::delete('pemasok/{id}', 'PemasokController@destroy')->name('pemasok.destroy');
+
+//Lokasi
+Route::get('lokasi', 'LokasiController@index')->name('lokasi');
+Route::post('lokasi/store', 'LokasiController@store')->name('lokasi.store');
+Route::put('lokasi/{id}/update', 'LokasiController@update')->name('lokasi.update');
+Route::delete('lokasi/{id}', 'LokasiController@destroy')->name('lokasi.destroy');

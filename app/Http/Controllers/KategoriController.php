@@ -57,7 +57,7 @@ class KategoriController extends Controller
     public function destroy($id)
     {
         Kategori::destroy($id);
-        return redirect()->route('Kategori', ['id' => $id]);
+        return redirect()->route('kategori', ['id' => $id]);
     }
 
 }

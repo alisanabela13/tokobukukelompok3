@@ -1,14 +1,14 @@
 @extends('layouts.partials.app')
 @section('title')
-User
+Pengguna
 @endsection
 
 @section('content')
 <div class="main-wrapper main-wrapper-1">
-    <div class="main-content" style="min-height: 116px;">
+<div class="main-content" style="min-height: 116px;">
         <section class="section">
           <div class="section-header">
-                <h1>User</h1>
+                <h1>Pengguna</h1>
           </div>
         </section>
           <div class="section-body">
@@ -18,7 +18,7 @@ User
                         @include('layouts.flash-messages')
                         <div class="card">
                             <div class="card-header">
-                                <h4>User</h4>
+                                <h4>Pengguna</h4>
                                 <div class="card-header-action">
                                 <div class="col-md-3 col-sm-3 col-xs-4 text-right">
                                 <a class="btn btn-sm btn-primary" href="{{route('user.create')}}" title="Tambah Data"><i class="fas fa-plus"></i></a>
@@ -73,7 +73,7 @@ User
                                                 <div class="modal-dialog" role="document">
                                                 <div class="modal-content">
                                                     <div class="modal-header">
-                                                    <h3 class="modal-title" id="exampleModalLabel">Detail User</h3>
+                                                    <h3 class="modal-title" id="exampleModalLabel">Detail Pengguna</h3>
                                                     <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                                                         <span aria-hidden="true">&times;</span>
                                                     </button>
@@ -81,7 +81,7 @@ User
                                                     <div class="modal-body">
                                                         <div class="row">
                                                             <div class="col-md-12" style="text-align: left;">
-                                                                <h6>Name</h6>
+                                                                <h6>Nama</h6>
                                                                 <label for="">{{$u->name}}</label>
                                                                 <hr>
                                                                 <h6>Username</h6>

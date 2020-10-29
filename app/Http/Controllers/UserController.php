@@ -45,9 +45,9 @@ class UserController extends Controller
         ]);
 
         if($insert == true ){
-            return redirect()->route('user')->with(['message' => 'Berhasil Menambah User', 'type' => 'success']);
+            return redirect()->route('user')->with(['message' => 'Berhasil Menambah Pengguna', 'type' => 'success']);
         } else {
-            return redirect()->route('user')->with(['message' => 'Gagal Menambah User', 'type' => 'error']);
+            return redirect()->route('user')->with(['message' => 'Gagal Menambah Pengguna', 'type' => 'error']);
         }
     }
 
@@ -78,9 +78,9 @@ class UserController extends Controller
         ]);
 
         if($update == true) {
-            return redirect()->route('user')->with(['message' => 'Berhasil Mengubah Data User', 'type' => 'success']);
+            return redirect()->route('user')->with(['message' => 'Berhasil Mengubah Data Pengguna', 'type' => 'success']);
         } else {
-            return redirect()->route('user')->with(['message' => 'Gagal Mengubah Data User', 'type' => 'error']);
+            return redirect()->route('user')->with(['message' => 'Gagal Mengubah Data Pengguna', 'type' => 'error']);
         }
     }
 

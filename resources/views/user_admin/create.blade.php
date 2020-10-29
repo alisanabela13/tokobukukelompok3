@@ -1,7 +1,7 @@
 @extends('layouts.partials.app')
 
 @section('title')
-    Tambah User
+    Tambah Pengguna
 @endsection
 
 @section('content')
@@ -9,12 +9,12 @@
         <div class="main-content" style="min-height: 116px;">
             <section class="section">
                 <div class="section-header">
-                    <h1>Tambah User</h1>
+                    <h1>Tambah Pengguna</h1>
                 </div>
                 <div class="section-body">
                     <div class="card">
                         <div class="card-header">
-                            <h4>Form Tambah User</h4>
+                            <h4>Form Tambah Pengguna</h4>
                         </div>
                                 <div class="card-body">
                                     <h6>Bila ada tanda <span class="text-danger">*</span> Input tidak boleh dikosongkan.</h6>

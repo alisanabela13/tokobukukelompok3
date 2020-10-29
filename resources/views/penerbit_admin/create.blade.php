@@ -22,14 +22,31 @@
                                     <form action="{{ route('penerbit.store') }}" method="POST" enctype="multipart/form-data" class="needs-validation" novalidate="" >
                                         {{ csrf_field() }}
                                         <div class="row">
-                                            <div class="col-md-6">
+                                            <div class="col-12">
                                                 <div class="form-group">
-                                                    <p>Nama Penerbit*</p>
-                                                    <input type="text" class="form-control" required name="nama" value="{{ old('nama') }}" >
+                                                    <label for="nama">Nama*</label>
+                                                    <input type="text" class="form-control" required id="nama" name="nama" value="{{ old('nama') }}">
+                                                    @error('nama')
+                                                        <span class="invalid-feedback" role="alert">
+                                                            <strong>{{ $message }}</strong>
+                                                        </span>
+                                                    @enderror
+                                                </div>
+                                                <div class="form-group">
+                                                    <label for="alamat">Alamat*</label>
+                                                    <input type="text" class="form-control" id="alamat" name="alamat" value="{{ old('alamat') }}">
+                                                </div>
+                                                <div class="form-group">
+                                                    <label for="email">Email*</label>
+                                                    <input type="email" class="form-control" id="email" name="email" value="{{ old('email') }}">
+                                                </div>
+                                                <div class="form-group">
+                                                    <label for="telepon">Telepon*</label>
+                                                    <input type="number" class="form-control" id="telepon" name="telepon" value="{{ old('telepon') }}">
                                                 </div>
                                             </div>
                                         </div>
-                                        <button class="btn btn-primary" type="submit">Tambah</button>
+                                        <button class="btn btn-primary" type="submit">Simpan</button>
                                     </form>
                                 </div>
 
