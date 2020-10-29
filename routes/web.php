@@ -59,3 +59,9 @@ Route::post('pemasok/store', 'PemasokController@store')->name('pemasok.store');
 Route::get('pemasok/{id}', 'PemasokController@edit')->name('pemasok.edit');
 Route::put('pemasok/{id}/update', 'PemasokController@update')->name('pemasok.update');
 Route::delete('pemasok/{id}', 'PemasokController@destroy')->name('pemasok.destroy');
+
+//Lokasi
+Route::get('lokasi', 'LokasiController@index')->name('lokasi');
+Route::post('lokasi/store', 'LokasiController@store')->name('lokasi.store');
+Route::put('lokasi/{id}/update', 'LokasiController@update')->name('lokasi.update');
+Route::delete('lokasi/{id}', 'LokasiController@destroy')->name('lokasi.destroy');

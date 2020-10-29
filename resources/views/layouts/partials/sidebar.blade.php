@@ -63,8 +63,8 @@
             <i class="fas fa-truck-moving"></i></i><span>Pemasok</span>
           </a>
         </li>
-        <li class="nav-item  {{Request::segment(1)=='pemasok' ?'active':''}}">
-          <a class="nav-link" href="{{route('pemasok')}}" aria-expanded="false">
+        <li class="nav-item  {{Request::segment(1)=='lokasi' ?'active':''}}">
+          <a class="nav-link" href="{{route('lokasi')}}" aria-expanded="false">
             <i class="fas fa-table"></i></i><span>Lokasi</span>
           </a>
         </li>

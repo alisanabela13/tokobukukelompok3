@@ -5,6 +5,7 @@
   <meta charset="UTF-8">
   <meta content="width=device-width, initial-scale=1, maximum-scale=1, shrink-to-fit=no" name="viewport">
   <title>Tokbuk | @yield('title')</title>
+  <script>window.BASEURL = "{{ url('/') }}";</script>
   {{-- <link rel="icon" type="image/png" sizes="16x16" href="{{asset('img/landingpage/logo.png')}}"> --}}
   <!-- csrf-token -->
   <meta name="csrf-token" content="{{ csrf_token() }}">
@@ -64,6 +65,7 @@
   <script src="{{asset('js/script-admin.js')}}"></script>
   <script src="https://cdn.jsdelivr.net/npm/select2@4.0.12/dist/js/select2.min.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/summernote@0.8.16/dist/summernote.min.js"></script>
+  @stack('js')
   <script>
     $(function () {
         $("#table-index").DataTable();
@@ -87,13 +89,13 @@
               confirmButtonText: 'Hapus!'
               }).then((result) => {
           if (result.value) {
-              Swal.fire({
-                      position: 'center',
-                      icon: 'success',
-                      title: 'Data Terhapus',
-                      showConfirmButton: false,
-                      timer: 1500
-                  });
+              // Swal.fire({
+              //         position: 'center',
+              //         icon: 'success',
+              //         title: 'Data Terhapus',
+              //         showConfirmButton: false,
+              //         timer: 1500
+              //     });
               form.submit();
           }
       });
