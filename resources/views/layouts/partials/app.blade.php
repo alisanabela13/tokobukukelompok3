@@ -6,7 +6,7 @@
   <meta content="width=device-width, initial-scale=1, maximum-scale=1, shrink-to-fit=no" name="viewport">
   <title>Tokbuk | @yield('title')</title>
   <script>window.BASEURL = "{{ url('/') }}";</script>
-  {{-- <link rel="icon" type="image/png" sizes="16x16" href="{{asset('img/landingpage/logo.png')}}"> --}}
+  <link rel="icon" type="image/png" sizes="16x16" href="{{asset('assets/img/favicon.png')}}">
   <!-- csrf-token -->
   <meta name="csrf-token" content="{{ csrf_token() }}">
   <!-- jquery -->
