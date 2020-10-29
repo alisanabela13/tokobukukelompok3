@@ -110,16 +110,13 @@
                 <form method="POST" action="{{ route('login') }}" >
                     @csrf
                   <div class="form-group">
-                    <label for="email">{{ __('E-Mail Address') }}</label>
-                    <input id="email" type="email" class="form-control @error('email') is-invalid @enderror" name="email" value="{{ old('email') }}" required autocomplete="email" autofocus>
-                        @error('email')
+                    <label for="email">{{ __('Email atau username') }}</label>
+                    <input id="keyword" type="text" class="form-control @error('keyword') is-invalid @enderror" name="keyword" value="{{ old('keyword') }}" autocomplete="keyword" autofocus>
+                        @error('keyword')
                             <span class="invalid-feedback" role="alert">
                                 <strong>{{ $message }}</strong>
                             </span>
                         @enderror
-                    <div class="invalid-feedback">
-                      Please fill in your email
-                    </div>
                   </div>
 
                   <div class="form-group">
@@ -131,25 +128,22 @@
                         </a>
                       </div>
                     </div>
-                    <input id="password" type="password" class="form-control @error('password') is-invalid @enderror" name="password" required autocomplete="current-password">
+                    <input id="password" type="password" class="form-control @error('password') is-invalid @enderror" name="password" autocomplete="current-password">
                          @error('password')
                             <span class="invalid-feedback" role="alert">
                                  <strong>{{ $message }}</strong>
                             </span>
                         @enderror
-                    <div class="invalid-feedback">
-                      please fill in your password
-                    </div>
                   </div>
 
-                  <div class="form-group">
+                  {{-- <div class="form-group">
                     <div class="custom-control custom-checkbox">
                         <input class="custom-control-input" type="checkbox" name="remember" id="remember-me" tabindex="3" {{ old('remember') ? 'checked' : '' }}>
                             <label class="custom-control-label" for="remember-me">
                                 {{ __('Remember Me') }}
                             </label>
                     </div>
-                  </div>
+                  </div> --}}
 
                   <div class="form-group">
                     <button type="submit" class="btn btn-primary btn-lg btn-block" tabindex="4">
@@ -179,7 +173,7 @@
               Don't have an account? <a href="{{ route('register') }}">Create One</a>
             </div> --}}
             <div class="simple-footer">
-              Copyright &copy; Stisla 2018
+              Copyright &copy; TokBuk 2020
             </div>
           </div>
         </div>
