@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateBukusTable extends Migration
+class CreateBukuTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,23 +13,23 @@ class CreateBukusTable extends Migration
      */
     public function up()
     {
-        Schema::create('bukus', function (Blueprint $table) {
+        Schema::create('buku', function (Blueprint $table) {
             $table->bigIncrements('id');
-            $table->string('file');
+            $table->string('sampul');
             $table->string('isbn');
             $table->string('judul');
+            $table->year('tahun_terbit');
             $table->unsignedBigInteger('id_penulis');
             $table->foreign('id_penulis')->references('id')->on('penulis');
             $table->unsignedBigInteger('id_penerbit');
-            $table->foreign('id_penerbit')->references('id')->on('penerbits');   
-            $table->unsignedBigInteger('id_jenisbuku');
-            $table->foreign('id_jenisbuku')->references('id')->on('jenisbukus');   
-            $table->unsignedBigInteger('id_suplier');
-            $table->foreign('id_suplier')->references('id')->on('supliers');  
-            $table->integer('tahun_terbit');
-            $table->integer('harga_beli');
-            $table->integer('harga_jual');
-            $table->string('lokasi');
+            $table->foreign('id_penerbit')->references('id')->on('penerbit');   
+            $table->unsignedBigInteger('id_kategori');
+            $table->foreign('id_kategori')->references('id')->on('kategori');   
+            $table->unsignedBigInteger('id_pemasok');
+            $table->foreign('id_pemasok')->references('id')->on('pemasok');  
+            $table->unsignedBigInteger('id_lokasi');
+            $table->foreign('id_lokasi')->references('id')->on('lokasi');  
+            $table->integer('harga');
             $table->string('jumlah');
             $table->timestamps();
         });
@@ -42,6 +42,6 @@ class CreateBukusTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('bukus');
+        Schema::dropIfExists('buku');
     }
 }
