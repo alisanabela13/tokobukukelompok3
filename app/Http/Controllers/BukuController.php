@@ -6,17 +6,17 @@ use Illuminate\Http\Request;
 use App\Buku;
 use App\Penulis;
 use App\Penerbit;
-use App\Jenisbuku;
-use App\Suplier;
+use App\Kategori;
+use App\Pemasok;
 
 class BukuController extends Controller
 {
-    public function __construct(Buku $buku, Penulis $penulis, Penerbit $penerbit, Jenisbuku $jenisbuku, Suplier $suplier)
+    public function __construct(Buku $buku, Penulis $penulis, Penerbit $penerbit, Kategori $kategori, Pemasok $Pemasok)
     {
         $this->buku = $buku;
         $this->penulis = $penulis;
         $this->penerbit = $penerbit;
-        $this->jenisbuku = $jenisbuku;
+        $this->Kategori = $kategori;
     }
     public function index()
     {
@@ -29,9 +29,9 @@ class BukuController extends Controller
     {
         $penulis = Penulis::all();
         $penerbit = Penerbit::all();
-        $jenisbuku = Jenisbuku::all();
-        $suplier = Suplier::all();
-        return view('buku_admin.create', compact('penulis', 'penerbit', 'jenisbuku', 'suplier'));
+        $kategori = Kategori::all();
+        $Pemasok = Pemasok::all();
+        return view('buku_admin.create', compact('penulis', 'penerbit', 'Kategori', 'Pemasok'));
     }
 
     public function store(Request $request)
@@ -42,8 +42,8 @@ class BukuController extends Controller
             'judul' => 'required',
             'id_penulis' => 'required',
             'id_penerbit' => 'required', 
-            'id_jenisbuku' => 'required',
-            'id_suplier' => 'required',
+            'id_kategori' => 'required',
+            'id_pemasok' => 'required',
             'tahun_terbit' => 'required',
             'harga_beli' => 'required',
             'harga_jual' => 'required',
@@ -62,8 +62,8 @@ class BukuController extends Controller
             'judul' => $request->judul,
             'id_penulis' => $request->id_penulis,
             'id_penerbit' => $request->id_penerbit,
-            'id_jenisbuku' => $request->id_jenisbuku,
-            'id_suplier' => $request->id_suplier,
+            'id_kategori' => $request->id_kategori,
+            'id_pemasok' => $request->id_pemasok,
             'tahun_terbit' => $request->tahun_terbit,
             'harga_beli' => $request->harga_beli,
             'harga_jual' => $request->harga_jual,
@@ -84,11 +84,11 @@ class BukuController extends Controller
     {
         $penulis = Penulis::all();
         $penerbit = Penerbit::all();
-        $jenisbuku = Jenisbuku::all();
-        $suplier = Suplier::all();
+        $kategori = Kategori::all();
+        $Pemasok = Pemasok::all();
         $buku = Buku::where('id', $id)->first();
 
-        return view('buku_admin.edit', compact('penulis', 'penerbit', 'jenisbuku', 'suplier', 'buku'));
+        return view('buku_admin.edit', compact('penulis', 'penerbit', 'Kategori', 'Pemasok', 'buku'));
     }
 
     public function update(Request $request, $id)
@@ -99,8 +99,8 @@ class BukuController extends Controller
             'judul' => 'required',
             'id_penulis' => 'required',
             'id_penerbit' => 'required',
-            'id_jenisbuku' => 'required',
-            'id_suplier' => 'required',
+            'id_kategori' => 'required',
+            'id_pemasok' => 'required',
             'tahun_terbit' => 'required',
             'harga_beli' => 'required',
             'harga_jual' => 'required',
@@ -122,8 +122,8 @@ class BukuController extends Controller
             'judul' => $request->judul,
             'id_penulis' => $request->id_penulis,
             'id_penerbit' => $request->id_penerbit,
-            'id_jenisbuku' => $request->id_jenisbuku,
-            'id_suplier' => $request->id_suplier,
+            'id_kategori' => $request->id_kategori,
+            'id_pemasok' => $request->id_pemasok,
             'tahun_terbit' => $request->tahun_terbit,
             'harga_beli' => $request->harga_beli,
             'harga_jual' => $request->harga_jual,
@@ -144,9 +144,9 @@ class BukuController extends Controller
         $buku = Buku::where('id', $id)->first();
         $penulis = Penulis::where('id', $id)->first();
         $penerbit = Penerbit::where('id', $id)->first();
-        $jenisbuku = Jenisbuku::where('id', $id)->first();
-        $suplier = Suplier::where('id', $id)->first();
-        return view('buku_admin.detail', compact('buku', 'penulis', 'penerbit', 'jenisbuku', 'suplier'));
+        $kategori = Kategori::where('id', $id)->first();
+        $Pemasok = Pemasok::where('id', $id)->first();
+        return view('buku_admin.detail', compact('buku', 'penulis', 'penerbit', 'Kategori', 'Pemasok'));
     }
 
     public function destroy($id)

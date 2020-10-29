@@ -1,7 +1,7 @@
 @extends('layouts.partials.app')
 
 @section('title')
-    Ubah Suplier
+    Ubah Pemasok
 @endsection
 
 @section('content')
@@ -9,42 +9,42 @@
         <div class="main-content" style="min-height: 116px;">
             <section class="section">
                 <div class="section-header">
-                    <h1>Ubah Suplier</h1>
+                    <h1>Ubah Pemasok</h1>
                 </div>
                 <div class="section-body">
                     <div class="card">
                         <div class="card-header">
-                            <h4>Form Ubah Suplier</h4>
+                            <h4>Form Ubah Pemasok</h4>
                         </div>
                         <div class="card-body">
                             <h6>Bila ada tanda <span class="text-danger">*</span> Input tidak boleh dikosongkan.</h6>
                             <br><br>
-                            <form action="{{ route('suplier.update', ['id' => $suplier->id]) }}" method="POST" enctype="multipart/form-data" class="needs-validation" novalidate="" >
+                            <form action="{{ route('Pemasok.update', ['id' => $Pemasok->id]) }}" method="POST" enctype="multipart/form-data" class="needs-validation" novalidate="" >
                                 {{ csrf_field() }}
                                 {{ method_field('PUT') }}
                                 {{-- <div class="row">
                                     <div class="col-md-6">
                                         <div class="form-group">
                                             <p>Jenis Buku*</p>
-                                        <input type="text" class="form-control" required name="name" value="{{$jenisbuku->name}}" >
+                                        <input type="text" class="form-control" required name="name" value="{{$kategori->name}}" >
                                         </div>
                                     </div>
                                 </div> --}}
                                 <div class="row">
                                     <div class="col-md-6">
                                         <div class="form-group">
-                                            <p>Nama Suplier*</p>
-                                        <input type="text" class="form-control" required name="nama" value="{{$suplier->nama}}" >
+                                            <p>Nama Pemasok*</p>
+                                        <input type="text" class="form-control" required name="nama" value="{{$Pemasok->nama}}" >
                                             <p>No HP*</p>
-                                            <input type="number" class="form-control" required name="no_hp" value="{{$suplier->no_hp}}" >
+                                            <input type="number" class="form-control" required name="no_hp" value="{{$Pemasok->no_hp}}" >
                                             <p>E-Mail*</p>
-                                            <input type="email" class="form-control" required name="email" value="{{$suplier->email}}" >
+                                            <input type="email" class="form-control" required name="email" value="{{$Pemasok->email}}" >
                                         </div>
                                     </div>
                                     <div class="col-md-6">
                                         <div class="form-group">
-                                            <p>Alamat Suplier*</p>
-                                        <textarea type="text" class="form-control" required name="alamat"  style="height:215px">{{$suplier->alamat}}</textarea>
+                                            <p>Alamat Pemasok*</p>
+                                        <textarea type="text" class="form-control" required name="alamat"  style="height:215px">{{$Pemasok->alamat}}</textarea>
                                         </div>
                                     </div>
                                   </div>

@@ -39,7 +39,7 @@
                                                     <div class="row mb-4">
                                                         <div class="col-lg-4 col-5">JENIS BUKU</div>
                                                         <div class="col-1 text-right">:</div>
-                                                        <div class="col-lg-6 col-5">{{strtoupper($buku->jenisbuku->name)}}</div>
+                                                        <div class="col-lg-6 col-5">{{strtoupper($buku->Kategori->name)}}</div>
                                                     </div>
                                                     
                                                     <div class="row mb-4">
@@ -58,9 +58,9 @@
                                                         <div class="col-lg-6 col-5">{{$buku->tahun_terbit}}</div>
                                                     </div>
                                                     <div class="row mb-4">
-                                                        <div class="col-lg-4 col-5">SUPLIER BUKU</div>
+                                                        <div class="col-lg-4 col-5">Pemasok BUKU</div>
                                                         <div class="col-1 text-right">:</div>
-                                                        <div class="col-lg-6 col-5">{{strtoupper($buku->suplier->nama)}}</div>
+                                                        <div class="col-lg-6 col-5">{{strtoupper($buku->Pemasok->nama)}}</div>
                                                     </div>
                                                     
                                                     <div class="row mb-4">

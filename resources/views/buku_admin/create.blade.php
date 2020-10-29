@@ -31,9 +31,9 @@
                                                     <input type="text" class="form-control" required name="judul" value="{{ old('judul') }}" >
                                                     <br/>
                                                     <p>Jenis Buku*</p>
-                                                    <select required name="id_jenisbuku" class="form-control" value="{{ old('id_jenisbuku') }}">
+                                                    <select required name="id_kategori" class="form-control" value="{{ old('id_kategori') }}">
                                                         <option value=''>- Pilih -</option>
-                                                        @foreach($jenisbuku as $jen)
+                                                        @foreach($kategori as $jen)
                                                             <option value="{{ $jen['id'] }}"> {{$jen->name}} </option>
                                                         @endforeach
                                                     </select>
@@ -54,10 +54,10 @@
                                                         @endforeach
                                                     </select>
                                                     <br/>
-                                                    <p>Suplier*</p>
-                                                    <select required name="id_suplier" class="form-control" value="{{ old('id_suplier') }}">
+                                                    <p>Pemasok*</p>
+                                                    <select required name="id_pemasok" class="form-control" value="{{ old('id_pemasok') }}">
                                                         <option value=''>- Pilih -</option>
-                                                        @foreach($suplier as $sup)     
+                                                        @foreach($Pemasok as $sup)     
                                                             <option value="{{ $sup['id'] }}"> {{$sup->nama}} </option>
                                                         @endforeach
                                                     </select>

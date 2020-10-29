@@ -16,9 +16,9 @@ class CreatePenerbitTable extends Migration
         Schema::create('penerbit', function (Blueprint $table) {
             $table->bigIncrements('id');
             $table->string('nama');
-            $table->string('alamat');
-            $table->string('email');
-            $table->string('telepon');
+            $table->string('alamat')->nullable();
+            $table->string('email')->nullable();
+            $table->string('telepon')->nullable();
             $table->timestamps();
         });
     }

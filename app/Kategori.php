@@ -4,13 +4,14 @@ namespace App;
 
 use Illuminate\Database\Eloquent\Model;
 
-class Jenisbuku extends Model
+class Kategori extends Model
 {
+    protected $table = 'kategori';
     protected $fillable = [
-        'name'
+        'nama'
     ];
     public function buku()
     {
-        return $this->hasMany(Buku::class, 'name_id');
+        return $this->hasMany(Buku::class, 'id_kategori');
     }
 }

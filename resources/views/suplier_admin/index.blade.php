@@ -1,6 +1,6 @@
 @extends('layouts.partials.app')
 @section('title')
-Suplier Buku
+Pemasok Buku
 @endsection
 
 @section('content')
@@ -8,7 +8,7 @@ Suplier Buku
     <div class="main-content" style="min-height: 116px;">
         <section class="section">
           <div class="section-header">
-                <h1>Suplier Buku</h1>
+                <h1>Pemasok Buku</h1>
           </div>
           <div class="section-body">
             <div class="content-body table">
@@ -16,10 +16,10 @@ Suplier Buku
                     <div class="col-12 col-md-12 col-lg-12">
                         <div class="card">
                             <div class="card-header">
-                                <h4>Suplier Buku</h4>
+                                <h4>Pemasok Buku</h4>
                                 <div class="card-header-action">
                                 <div class="col-md-3 col-sm-3 col-xs-4 text-right">
-                                <a class="btn btn-sm btn-primary" href="{{route('suplier.create')}}" title="Tambah Data"><i class="fas fa-plus"></i></a>
+                                <a class="btn btn-sm btn-primary" href="{{route('Pemasok.create')}}" title="Tambah Data"><i class="fas fa-plus"></i></a>
                                 </div>
                             </div>
                         </div>
@@ -37,7 +37,7 @@ Suplier Buku
                                         </tr>
                                     </thead>
                                     <tbody>
-                                      @foreach ($suplier as $s)
+                                      @foreach ($Pemasok as $s)
                                       <tr>
                                       <td>{{$loop->index+1}}</td>
                                       <td>{{$s->nama}}</td>
@@ -46,10 +46,10 @@ Suplier Buku
                                       <td>{{$s->no_hp}}</td>
                                   <td>
                                       <div class="btn-group">
-                                        <a type="submit" class="btn btn-sm btn-info text-white" href="{{ route('suplier.edit',  ['id' => $s["id"]]) }}"><i class="fas fa-pencil-alt"></i></a>
+                                        <a type="submit" class="btn btn-sm btn-info text-white" href="{{ route('Pemasok.edit',  ['id' => $s["id"]]) }}"><i class="fas fa-pencil-alt"></i></a>
                                     </div>
                                     <div class="btn-group">
-                                        <form method="post" class="delete_form " action="{{route('suplier.destroy',$s['id'])}}">
+                                        <form method="post" class="delete_form " action="{{route('Pemasok.destroy',$s['id'])}}">
                                             @method('DELETE')
                                             @csrf
                                             <button  class="btn btn-sm btn-danger" id="btn-delete"  ><i class="fa fa-trash"></i></button>

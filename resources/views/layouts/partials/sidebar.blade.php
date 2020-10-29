@@ -19,8 +19,8 @@
         <li class="nav-item  {{Request::segment(1)=='databuku' ?'active':''}}"><a class="nav-link" href="{{route('buku')}}" aria-expanded="false"><i class="fas fa-book"></i> <span>Data Buku</span></a></li>
         <li class="nav-item  {{Request::segment(1)=='penulis' ?'active':''}}"><a class="nav-link" href="{{route('penulis')}}" aria-expanded="false"><i class="fas fa-user-edit"></i><span>Penulis Buku</span></a></li>
         <li class="nav-item  {{Request::segment(1)=='penerbit' ?'active':''}}"><a class="nav-link" href="{{route('penerbit')}}" aria-expanded="false"><i class="fas fa-building"></i></i><span>Penerbit Buku</span></a></li>
-        <li class="nav-item  {{Request::segment(1)=='jenisbuku' ?'active':''}}"><a class="nav-link" href="{{route('jenisbuku')}}" aria-expanded="false"><i class="fas fa-swatchbook"></i></i><span>Jenis Buku</span></a></li>
-        <li class="nav-item  {{Request::segment(1)=='suplier' ?'active':''}}"><a class="nav-link" href="{{route('suplier')}}" aria-expanded="false"><i class="fas fa-truck-moving"></i></i><span>Suplier Buku</span></a></li><hr>
+        <li class="nav-item  {{Request::segment(1)=='Kategori' ?'active':''}}"><a class="nav-link" href="{{route('Kategori')}}" aria-expanded="false"><i class="fas fa-swatchbook"></i></i><span>Jenis Buku</span></a></li>
+        <li class="nav-item  {{Request::segment(1)=='Pemasok' ?'active':''}}"><a class="nav-link" href="{{route('Pemasok')}}" aria-expanded="false"><i class="fas fa-truck-moving"></i></i><span>Pemasok Buku</span></a></li><hr>
         
         <li class="nav-item"><a class="nav-link" href="#"><i class="fas fa-dollar-sign"></i><span>Transaksi</span></a></li>
         

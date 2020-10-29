@@ -32,10 +32,10 @@
                                                     <input type="text" class="form-control" required name="judul" value="{{ $buku->judul }}" >
                                                     <br/>
                                                     <p>Jenis Buku*</p>
-                                                    <select required name="id_jenisbuku" class="form-control" value="{{ old('id_jenisbuku') }}">
+                                                    <select required name="id_kategori" class="form-control" value="{{ old('id_kategori') }}">
                                                         <option value=''>- Pilih -</option>
-                                                        @foreach($jenisbuku as $jen)
-                                                            <option value="{{ $jen['id'] }}" {{$jen->id == $buku->id_jenisbuku ?  'selected' : ''}}> {{$jen->name}} </option>
+                                                        @foreach($kategori as $jen)
+                                                            <option value="{{ $jen['id'] }}" {{$jen->id == $buku->id_kategori ?  'selected' : ''}}> {{$jen->name}} </option>
                                                         @endforeach
                                                     </select>
                                                     <br/>
@@ -55,11 +55,11 @@
                                                         @endforeach
                                                     </select>
                                                     <br/>
-                                                    <p>Suplier*</p>
-                                                    <select required name="id_suplier" class="form-control" value="{{ old('id_suplier') }}">
+                                                    <p>Pemasok*</p>
+                                                    <select required name="id_pemasok" class="form-control" value="{{ old('id_pemasok') }}">
                                                         <option value=''>- Pilih -</option>
-                                                        @foreach($suplier as $sup)     
-                                                            <option value="{{ $sup['id'] }}" {{$sup->id == $buku->id_suplier ?  'selected' : ''}}> {{$sup->nama}} </option>
+                                                        @foreach($Pemasok as $sup)     
+                                                            <option value="{{ $sup['id'] }}" {{$sup->id == $buku->id_pemasok ?  'selected' : ''}}> {{$sup->nama}} </option>
                                                         @endforeach
                                                     </select>
                                                 </div>

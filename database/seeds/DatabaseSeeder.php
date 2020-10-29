@@ -14,8 +14,9 @@ class DatabaseSeeder extends Seeder
         $this->call(UsersTableSeeder::class);
         $this->call(PenulisTableSeeder::class);
         $this->call(PenerbitTableSeeder::class);
-        $this->call(JenisbukuTableSeeder::class);
-        $this->call(SuplierTableSeeder::class);
+        $this->call(KategoriTableSeeder::class);
+        $this->call(PemasokTableSeeder::class);
+        $this->call(LokasiTableSeeder::class);
         $this->call(BukuTableSeeder::class);
     }
 }

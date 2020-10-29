@@ -3,24 +3,24 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use App\Suplier;
+use App\Pemasok;
 
-class SuplierController extends Controller
+class PemasokController extends Controller
 {
-    public function __construct(Suplier $suplier)
+    public function __construct(Pemasok $Pemasok)
     {
-        $this->suplier = $suplier;
+        $this->Pemasok = $Pemasok;
     }
 
     public function index()
     {
-        $suplier = $this->suplier->get();
-        return view('suplier_admin.index', compact('suplier'));
+        $Pemasok = $this->Pemasok->get();
+        return view('Pemasok_admin.index', compact('Pemasok'));
     }
 
     public function create()
     {
-        return view('suplier_admin.create');
+        return view('Pemasok_admin.create');
     }
     
     public function store(Request $request)
@@ -33,7 +33,7 @@ class SuplierController extends Controller
         ]);
 
        
-        $insert = Suplier::insert([
+        $insert = Pemasok::insert([
             'nama' => $request->nama,
             'alamat' => $request->alamat,
             'email' => $request->email,
@@ -41,17 +41,17 @@ class SuplierController extends Controller
         ]);
 
         if($insert == true ){
-            return redirect()->route('suplier')->with(['message' => 'Berhasil Menambah Suplier', 'type' => 'success']);
+            return redirect()->route('Pemasok')->with(['message' => 'Berhasil Menambah Pemasok', 'type' => 'success']);
         } else {
 
-            return redirect()->route('suplier')->with(['message' => 'Gagal Menambah Suplier', 'type' => 'error']);
+            return redirect()->route('Pemasok')->with(['message' => 'Gagal Menambah Pemasok', 'type' => 'error']);
         }
     }
 
     public function edit($id)
     {
-        $suplier = Suplier::where('id', $id)->first();
-        return view('suplier_admin.edit', compact('suplier'));
+        $Pemasok = Pemasok::where('id', $id)->first();
+        return view('Pemasok_admin.edit', compact('Pemasok'));
     }
 
     public function update(Request $request, $id)
@@ -63,7 +63,7 @@ class SuplierController extends Controller
             'no_hp' => 'required'
         ]);
 
-        $update = Suplier::where('id', $id)->update([
+        $update = Pemasok::where('id', $id)->update([
             'nama' => $request->nama,
             'alamat' => $request->alamat,
             'email' => $request->email,
@@ -71,15 +71,15 @@ class SuplierController extends Controller
         ]);
 
         if($update == true) {
-            return redirect()->route('suplier')->with(['message' => 'Berhasil Mengubah Suplier', 'type' => 'success']);
+            return redirect()->route('Pemasok')->with(['message' => 'Berhasil Mengubah Pemasok', 'type' => 'success']);
         } else {
-            return redirect()->route('suplier')->with(['message' => 'Gagal Mengubah Suplier', 'type' => 'error']);
+            return redirect()->route('Pemasok')->with(['message' => 'Gagal Mengubah Pemasok', 'type' => 'error']);
         }
     }
 
     public function destroy($id)
     {
-        Suplier::destroy($id);
-        return redirect()->route('suplier', ['id' => $id]);
+        Pemasok::destroy($id);
+        return redirect()->route('Pemasok', ['id' => $id]);
     }
 }

@@ -6,17 +6,17 @@ use Illuminate\Database\Eloquent\Model;
 
 class Buku extends Model
 {
+    protected $table = 'buku';
     protected $fillable = [
-        'file',
+        'sampul',
         'isbn',
         'judul',
+        'tahun_terbit',
         'id_penulis',
         'id_penerbit',
-        'name_id',
-        'id_suplier',
-        'tahun_terbit',
-        'harga_beli',
-        'harga_jual',
+        'id_kategori',
+        'id_pemasok',
+        'harga',
         'jumlah'
     ];
     public function penulis()
@@ -29,14 +29,14 @@ class Buku extends Model
         return $this->belongsTo(Penerbit::class, 'id_penerbit');
     }
 
-    public function jenisbuku()
+    public function Kategori()
     {
-        return $this->belongsTo(Jenisbuku::class, 'id_jenisbuku');
+        return $this->belongsTo(Kategori::class, 'id_kategori');
     }
 
-    public function suplier()
+    public function Pemasok()
     {
-        return $this->belongsTo(Suplier::class, 'id_suplier');
+        return $this->belongsTo(Pemasok::class, 'id_pemasok');
     }
 
 }

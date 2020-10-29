@@ -19,7 +19,7 @@ Penerbit Buku
                                 <h4>Penerbit Buku</h4>
                                 <div class="card-header-action">
                                 <div class="col-md-3 col-sm-3 col-xs-4 text-right">
-                                <a class="btn btn-sm btn-primary" href="{{route('jenisbuku.create')}}" title="Tambah Data"><i class="fas fa-plus"></i></a>
+                                <a class="btn btn-sm btn-primary" href="{{route('Kategori.create')}}" title="Tambah Data"><i class="fas fa-plus"></i></a>
                                 </div>
                             </div>
                         </div>
@@ -34,16 +34,16 @@ Penerbit Buku
                                         </tr>
                                     </thead>
                                     <tbody>
-                                      @foreach ($jenisbuku as $j)
+                                      @foreach ($kategori as $j)
                                       <tr>
                                       <td>{{$loop->index+1}}</td>
                                       <td>{{$j->name}}</td>
                                   <td>
                                       <div class="btn-group">
-                                        <a type="submit" class="btn btn-sm btn-info text-white" href="{{ route('jenisbuku.edit',  ['id' => $j["id"]]) }}"><i class="fas fa-pencil-alt"></i></a>
+                                        <a type="submit" class="btn btn-sm btn-info text-white" href="{{ route('Kategori.edit',  ['id' => $j["id"]]) }}"><i class="fas fa-pencil-alt"></i></a>
                                     </div>
                                     <div class="btn-group">
-                                        <form method="post" class="delete_form " action="{{route('jenisbuku.destroy',$j['id'])}}">
+                                        <form method="post" class="delete_form " action="{{route('Kategori.destroy',$j['id'])}}">
                                             @method('DELETE')
                                             @csrf
                                             <button  class="btn btn-sm btn-danger" id="btn-delete"  ><i class="fa fa-trash"></i></button>

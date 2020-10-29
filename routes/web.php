@@ -45,17 +45,17 @@ Route::put('penerbit/{id}/update', 'PenerbitController@update')->name('penerbit.
 Route::delete('penerbit/{id}', 'PenerbitController@destroy')->name('penerbit.destroy');
 
 //jenis buku
-Route::get('/jenisbuku', 'JenisbukuController@index')->name('jenisbuku');
-Route::get('jenisbuku/create', 'JenisbukuController@create')->name('jenisbuku.create');
-Route::post('jenisbuku/store', 'JenisbukuController@store')->name('jenisbuku.store');
-Route::get('jenisbuku/{id}', 'JenisbukuController@edit')->name('jenisbuku.edit');
-Route::put('jenisbuku/{id}/update', 'JenisbukuController@update')->name('jenisbuku.update');
-Route::delete('jenisbuku/{id}', 'JenisbukuController@destroy')->name('jenisbuku.destroy');
+Route::get('/Kategori', 'KategoriController@index')->name('Kategori');
+Route::get('Kategori/create', 'KategoriController@create')->name('Kategori.create');
+Route::post('Kategori/store', 'KategoriController@store')->name('Kategori.store');
+Route::get('Kategori/{id}', 'KategoriController@edit')->name('Kategori.edit');
+Route::put('Kategori/{id}/update', 'KategoriController@update')->name('Kategori.update');
+Route::delete('Kategori/{id}', 'KategoriController@destroy')->name('Kategori.destroy');
 
-//suplier
-Route::get('/suplier', 'SuplierController@index')->name('suplier');
-Route::get('suplier/create', 'SuplierController@create')->name('suplier.create');
-Route::post('suplier/store', 'SuplierController@store')->name('suplier.store');
-Route::get('suplier/{id}', 'SuplierController@edit')->name('suplier.edit');
-Route::put('suplier/{id}/update', 'SuplierController@update')->name('suplier.update');
-Route::delete('suplier/{id}', 'SuplierController@destroy')->name('suplier.destroy');
+//Pemasok
+Route::get('/Pemasok', 'PemasokController@index')->name('Pemasok');
+Route::get('Pemasok/create', 'PemasokController@create')->name('Pemasok.create');
+Route::post('Pemasok/store', 'PemasokController@store')->name('Pemasok.store');
+Route::get('Pemasok/{id}', 'PemasokController@edit')->name('Pemasok.edit');
+Route::put('Pemasok/{id}/update', 'PemasokController@update')->name('Pemasok.update');
+Route::delete('Pemasok/{id}', 'PemasokController@destroy')->name('Pemasok.destroy');

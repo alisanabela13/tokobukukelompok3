@@ -4,16 +4,17 @@ namespace App;
 
 use Illuminate\Database\Eloquent\Model;
 
-class Suplier extends Model
+class Pemasok extends Model
 {
+    protected $table = 'pemasok';
     protected $fillable = [
         'nama',
         'alamat',
         'email',
-        'no_hp'
+        'telepon'
     ];
     public function buku()
     {
-        return $this->hasMany(Buku::class, 'id_suplier');
+        return $this->hasMany(Buku::class, 'id_pemasok');
     }
 }
