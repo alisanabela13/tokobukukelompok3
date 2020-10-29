@@ -19,7 +19,7 @@ Penerbit Buku
                                 <h4>Penerbit Buku</h4>
                                 <div class="card-header-action">
                                 <div class="col-md-3 col-sm-3 col-xs-4 text-right">
-                                <a class="btn btn-sm btn-primary" href="{{route('Kategori.create')}}" title="Tambah Data"><i class="fas fa-plus"></i></a>
+                                <a class="btn btn-sm btn-primary" href="{{route('kategori.create')}}" title="Tambah Data"><i class="fas fa-plus"></i></a>
                                 </div>
                             </div>
                         </div>
@@ -29,7 +29,7 @@ Penerbit Buku
                                     <thead style="">
                                         <tr>
                                             <th>No</th>
-                                            <th>Jenis Buku</th>
+                                            <th>Kategori</th>
                                             <th>Aksi</th>
                                         </tr>
                                     </thead>
@@ -40,10 +40,10 @@ Penerbit Buku
                                       <td>{{$j->name}}</td>
                                   <td>
                                       <div class="btn-group">
-                                        <a type="submit" class="btn btn-sm btn-info text-white" href="{{ route('Kategori.edit',  ['id' => $j["id"]]) }}"><i class="fas fa-pencil-alt"></i></a>
+                                        <a type="submit" class="btn btn-sm btn-info text-white" href="{{ route('kategori.edit',  ['id' => $j["id"]]) }}"><i class="fas fa-pencil-alt"></i></a>
                                     </div>
                                     <div class="btn-group">
-                                        <form method="post" class="delete_form " action="{{route('Kategori.destroy',$j['id'])}}">
+                                        <form method="post" class="delete_form " action="{{route('kategori.destroy',$j['id'])}}">
                                             @method('DELETE')
                                             @csrf
                                             <button  class="btn btn-sm btn-danger" id="btn-delete"  ><i class="fa fa-trash"></i></button>

@@ -19,7 +19,7 @@ Pemasok Buku
                                 <h4>Pemasok Buku</h4>
                                 <div class="card-header-action">
                                 <div class="col-md-3 col-sm-3 col-xs-4 text-right">
-                                <a class="btn btn-sm btn-primary" href="{{route('Pemasok.create')}}" title="Tambah Data"><i class="fas fa-plus"></i></a>
+                                <a class="btn btn-sm btn-primary" href="{{route('pemasok.create')}}" title="Tambah Data"><i class="fas fa-plus"></i></a>
                                 </div>
                             </div>
                         </div>
@@ -32,24 +32,24 @@ Pemasok Buku
                                             <th>Nama</th>
                                             <th>Alamat</th>
                                             <th>E-Mail</th>
-                                            <th>No HP</th>
+                                            <th>Telepon</th>
                                             <th>Aksi</th>
                                         </tr>
                                     </thead>
                                     <tbody>
-                                      @foreach ($Pemasok as $s)
+                                      @foreach ($pemasok as $s)
                                       <tr>
                                       <td>{{$loop->index+1}}</td>
                                       <td>{{$s->nama}}</td>
                                       <td>{{$s->alamat}}</td>
                                       <td>{{$s->email}}</td>
-                                      <td>{{$s->no_hp}}</td>
+                                      <td>{{$s->telepon}}</td>
                                   <td>
                                       <div class="btn-group">
-                                        <a type="submit" class="btn btn-sm btn-info text-white" href="{{ route('Pemasok.edit',  ['id' => $s["id"]]) }}"><i class="fas fa-pencil-alt"></i></a>
+                                        <a type="submit" class="btn btn-sm btn-info text-white" href="{{ route('pemasok.edit',  ['id' => $s["id"]]) }}"><i class="fas fa-pencil-alt"></i></a>
                                     </div>
                                     <div class="btn-group">
-                                        <form method="post" class="delete_form " action="{{route('Pemasok.destroy',$s['id'])}}">
+                                        <form method="post" class="delete_form " action="{{route('pemasok.destroy',$s['id'])}}">
                                             @method('DELETE')
                                             @csrf
                                             <button  class="btn btn-sm btn-danger" id="btn-delete"  ><i class="fa fa-trash"></i></button>

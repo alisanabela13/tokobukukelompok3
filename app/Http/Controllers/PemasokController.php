@@ -7,20 +7,20 @@ use App\Pemasok;
 
 class PemasokController extends Controller
 {
-    public function __construct(Pemasok $Pemasok)
+    public function __construct(Pemasok $pemasok)
     {
-        $this->Pemasok = $Pemasok;
+        $this->Pemasok = $pemasok;
     }
 
     public function index()
     {
-        $Pemasok = $this->Pemasok->get();
-        return view('Pemasok_admin.index', compact('Pemasok'));
+        $pemasok = $this->Pemasok->get();
+        return view('pemasok_admin.index', compact('pemasok'));
     }
 
     public function create()
     {
-        return view('Pemasok_admin.create');
+        return view('pemasok_admin.create');
     }
     
     public function store(Request $request)
@@ -29,7 +29,7 @@ class PemasokController extends Controller
             'nama' => 'required',
             'alamat' => 'required',
             'email' => 'required',
-            'no_hp' => 'required'
+            'telepon' => 'required'
         ]);
 
        
@@ -37,21 +37,21 @@ class PemasokController extends Controller
             'nama' => $request->nama,
             'alamat' => $request->alamat,
             'email' => $request->email,
-            'no_hp' => $request->no_hp
+            'telepon' => $request->telepon
         ]);
 
         if($insert == true ){
-            return redirect()->route('Pemasok')->with(['message' => 'Berhasil Menambah Pemasok', 'type' => 'success']);
+            return redirect()->route('pemasok')->with(['message' => 'Berhasil Menambah Pemasok', 'type' => 'success']);
         } else {
 
-            return redirect()->route('Pemasok')->with(['message' => 'Gagal Menambah Pemasok', 'type' => 'error']);
+            return redirect()->route('pemasok')->with(['message' => 'Gagal Menambah Pemasok', 'type' => 'error']);
         }
     }
 
     public function edit($id)
     {
-        $Pemasok = Pemasok::where('id', $id)->first();
-        return view('Pemasok_admin.edit', compact('Pemasok'));
+        $pemasok = Pemasok::where('id', $id)->first();
+        return view('pemasok_admin.edit', compact('pemasok'));
     }
 
     public function update(Request $request, $id)
@@ -60,26 +60,26 @@ class PemasokController extends Controller
             'nama' => 'required',
             'alamat' => 'required',
             'email' => 'required',
-            'no_hp' => 'required'
+            'telepon' => 'required'
         ]);
 
         $update = Pemasok::where('id', $id)->update([
             'nama' => $request->nama,
             'alamat' => $request->alamat,
             'email' => $request->email,
-            'no_hp' => $request->no_hp
+            'telepon' => $request->telepon
         ]);
 
         if($update == true) {
-            return redirect()->route('Pemasok')->with(['message' => 'Berhasil Mengubah Pemasok', 'type' => 'success']);
+            return redirect()->route('pemasok')->with(['message' => 'Berhasil Mengubah Pemasok', 'type' => 'success']);
         } else {
-            return redirect()->route('Pemasok')->with(['message' => 'Gagal Mengubah Pemasok', 'type' => 'error']);
+            return redirect()->route('pemasok')->with(['message' => 'Gagal Mengubah Pemasok', 'type' => 'error']);
         }
     }
 
     public function destroy($id)
     {
         Pemasok::destroy($id);
-        return redirect()->route('Pemasok', ['id' => $id]);
+        return redirect()->route('pemasok', ['id' => $id]);
     }
 }

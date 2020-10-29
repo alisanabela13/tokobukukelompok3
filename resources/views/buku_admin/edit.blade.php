@@ -31,7 +31,7 @@
                                                     <p>Judul Buku*</p>
                                                     <input type="text" class="form-control" required name="judul" value="{{ $buku->judul }}" >
                                                     <br/>
-                                                    <p>Jenis Buku*</p>
+                                                    <p>Kategori*</p>
                                                     <select required name="id_kategori" class="form-control" value="{{ old('id_kategori') }}">
                                                         <option value=''>- Pilih -</option>
                                                         @foreach($kategori as $jen)

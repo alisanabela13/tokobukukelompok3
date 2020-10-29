@@ -1,7 +1,7 @@
 @extends('layouts.partials.app')
 
 @section('title')
-    Tambah Jenis Buku
+    Tambah Kategori
 @endsection
 
 @section('content')
@@ -9,22 +9,22 @@
         <div class="main-content" style="min-height: 116px;">
             <section class="section">
                 <div class="section-header">
-                    <h1>Tambah Jenis Buku</h1>
+                    <h1>Tambah Kategori</h1>
                 </div>
                 <div class="section-body">
                     <div class="card">
                         <div class="card-header">
-                            <h4>Form Tambah Jenis Buku</h4>
+                            <h4>Form Tambah Kategori</h4>
                         </div>
                                 <div class="card-body">
                                     <h6>Bila ada tanda <span class="text-danger">*</span> Input tidak boleh dikosongkan.</h6>
                                     <br><br>
-                                    <form action="{{ route('Kategori.store') }}" method="POST" enctype="multipart/form-data" class="needs-validation" novalidate="" >
+                                    <form action="{{ route('kategori.store') }}" method="POST" enctype="multipart/form-data" class="needs-validation" novalidate="" >
                                         {{ csrf_field() }}
                                         <div class="row">
                                             <div class="col-md-6">
                                                 <div class="form-group">
-                                                    <p>Nama Jenis Buku*</p>
+                                                    <p>Nama Kategori*</p>
                                                     <input type="text" class="form-control" required name="name" value="{{ old('name') }}" >
                                                 </div>
                                             </div>

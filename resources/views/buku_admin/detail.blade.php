@@ -37,9 +37,9 @@
                                                         <div class="col-lg-6 col-5">{{strtoupper($buku->isbn)}}</div>
                                                     </div>
                                                     <div class="row mb-4">
-                                                        <div class="col-lg-4 col-5">JENIS BUKU</div>
+                                                        <div class="col-lg-4 col-5">KATEGORI</div>
                                                         <div class="col-1 text-right">:</div>
-                                                        <div class="col-lg-6 col-5">{{strtoupper($buku->Kategori->name)}}</div>
+                                                        <div class="col-lg-6 col-5">{{strtoupper($buku->kategori->name)}}</div>
                                                     </div>
                                                     
                                                     <div class="row mb-4">

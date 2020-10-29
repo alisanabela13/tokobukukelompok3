@@ -19,15 +19,15 @@
                                 <div class="card-body">
                                     <h6>Bila ada tanda <span class="text-danger">*</span> Input tidak boleh dikosongkan.</h6>
                                     <br><br>
-                                    <form action="{{ route('Pemasok.store') }}" method="POST" enctype="multipart/form-data" class="needs-validation" novalidate="" >
+                                    <form action="{{ route('pemasok.store') }}" method="POST" enctype="multipart/form-data" class="needs-validation" novalidate="" >
                                         {{ csrf_field() }}
                                         <div class="row">
                                             <div class="col-md-6">
                                                 <div class="form-group">
                                                     <p>Nama Pemasok*</p>
                                                     <input type="text" class="form-control" required name="nama" value="{{ old('nama') }}" >
-                                                    <p>No HP*</p>
-                                                    <input type="number" class="form-control" required name="no_hp" value="{{ old('no_hp') }}" >
+                                                    <p>Telepon*</p>
+                                                    <input type="number" class="form-control" required name="telepon" value="{{ old('telepon') }}" >
                                                     <p>E-Mail*</p>
                                                     <input type="email" class="form-control" required name="email" value="{{ old('email') }}" >
                                                 </div>

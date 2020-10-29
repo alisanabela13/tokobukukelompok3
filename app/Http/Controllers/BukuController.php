@@ -37,17 +37,16 @@ class BukuController extends Controller
     public function store(Request $request)
     {
         $validate = $request->validate([
-            'file' => 'required|mimes:png,jpg,jpeg|max:2048',
+            'sampul' => 'required|mimes:png,jpg,jpeg|max:2048',
             'isbn' => 'required',
             'judul' => 'required',
+            'tahun_terbit' => 'required',
             'id_penulis' => 'required',
             'id_penerbit' => 'required', 
             'id_kategori' => 'required',
             'id_pemasok' => 'required',
-            'tahun_terbit' => 'required',
-            'harga_beli' => 'required',
-            'harga_jual' => 'required',
-            'lokasi' => 'required',
+            'id_lokasi' => 'required',
+            'harga' => 'required',
             'jumlah' => 'required'
 
         ]);
@@ -57,17 +56,16 @@ class BukuController extends Controller
         $file->move(public_path('buku/'), $get_name);
 
         $insert = Buku::insert([
-            'file' => $get_name,
+            'sampul' => $get_name,
             'isbn' => $request->isbn,
             'judul' => $request->judul,
+            'tahun_terbit' => $request->tahun_terbit,
             'id_penulis' => $request->id_penulis,
             'id_penerbit' => $request->id_penerbit,
             'id_kategori' => $request->id_kategori,
             'id_pemasok' => $request->id_pemasok,
-            'tahun_terbit' => $request->tahun_terbit,
-            'harga_beli' => $request->harga_beli,
-            'harga_jual' => $request->harga_jual,
-            'lokasi' => $request->lokasi,
+            'id_lokasi' => $request->lokasi,
+            'harga' => $request->harga,
             'jumlah' => $request->jumlah,
 
 

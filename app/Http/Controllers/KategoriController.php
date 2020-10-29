@@ -15,7 +15,7 @@ class KategoriController extends Controller
     public function index()
     {
         $kategori = $this->Kategori->get();
-        return view('Kategori_admin.index', compact('Kategori'));
+        return view('kategori_admin.index', compact('kategori'));
     }
 
     public function create()
@@ -35,10 +35,10 @@ class KategoriController extends Controller
         ]);
 
         if($insert == true ){
-            return redirect()->route('Kategori')->with(['message' => 'Berhasil Menambah Jenis Buku', 'type' => 'success']);
+            return redirect()->route('Kategori')->with(['message' => 'Berhasil Menambah Kategori', 'type' => 'success']);
         } else {
 
-            return redirect()->route('Kategori')->with(['message' => 'Gagal Menambah Jenis Buku', 'type' => 'error']);
+            return redirect()->route('Kategori')->with(['message' => 'Gagal Menambah Kategori', 'type' => 'error']);
         }
     }
 
@@ -59,9 +59,9 @@ class KategoriController extends Controller
         ]);
 
         if($update == true) {
-            return redirect()->route('Kategori')->with(['message' => 'Berhasil Mengubah Jenis Buku', 'type' => 'success']);
+            return redirect()->route('Kategori')->with(['message' => 'Berhasil Mengubah Kategori', 'type' => 'success']);
         } else {
-            return redirect()->route('Kategori')->with(['message' => 'Gagal Mengubah Jenis Buku', 'type' => 'error']);
+            return redirect()->route('Kategori')->with(['message' => 'Gagal Mengubah Kategori', 'type' => 'error']);
         }
     }
 

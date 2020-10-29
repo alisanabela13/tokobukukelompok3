@@ -19,13 +19,13 @@
                         <div class="card-body">
                             <h6>Bila ada tanda <span class="text-danger">*</span> Input tidak boleh dikosongkan.</h6>
                             <br><br>
-                            <form action="{{ route('Pemasok.update', ['id' => $Pemasok->id]) }}" method="POST" enctype="multipart/form-data" class="needs-validation" novalidate="" >
+                            <form action="{{ route('pemasok.update', ['id' => $Pemasok->id]) }}" method="POST" enctype="multipart/form-data" class="needs-validation" novalidate="" >
                                 {{ csrf_field() }}
                                 {{ method_field('PUT') }}
                                 {{-- <div class="row">
                                     <div class="col-md-6">
                                         <div class="form-group">
-                                            <p>Jenis Buku*</p>
+                                            <p>Kategori*</p>
                                         <input type="text" class="form-control" required name="name" value="{{$kategori->name}}" >
                                         </div>
                                     </div>
@@ -35,8 +35,8 @@
                                         <div class="form-group">
                                             <p>Nama Pemasok*</p>
                                         <input type="text" class="form-control" required name="nama" value="{{$Pemasok->nama}}" >
-                                            <p>No HP*</p>
-                                            <input type="number" class="form-control" required name="no_hp" value="{{$Pemasok->no_hp}}" >
+                                            <p>Telepon*</p>
+                                            <input type="number" class="form-control" required name="telepon" value="{{$Pemasok->telepon}}" >
                                             <p>E-Mail*</p>
                                             <input type="email" class="form-control" required name="email" value="{{$Pemasok->email}}" >
                                         </div>
