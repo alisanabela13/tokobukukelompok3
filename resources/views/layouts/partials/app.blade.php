@@ -79,7 +79,7 @@
           var form = $(this).parent();
           Swal.fire({
               title: 'Hapus?',
-              text: "Data Tidak Dapat kembali!",
+              text: "Apakah Anda Yakin Ingin Menghapus Data Tersebut?",
               icon: 'warning',
               showCancelButton: true,
               confirmButtonColor: '#3085d6',

@@ -19,8 +19,11 @@ class CreateUsersTable extends Migration
             $table->string('username');
             $table->enum('posisi', ['Admin', 'Operator', 'Kasir']);
             $table->string('email');
+            $table->string('telepon');
+            $table->text('alamat');
             $table->string('password');
             $table->timestamps();
+            $table->softDeletes();
         });
     }
 

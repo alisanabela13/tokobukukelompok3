@@ -16,10 +16,7 @@ class PenulisController extends Controller
         $penulis = $this->penulis->get();
         return view('penulis_admin.index', compact('penulis'));
     }
-    public function create()
-    {
-        return view('penulis_admin.create');
-    }
+    
     public function store(Request $request)
     {
         $validate = $request->validate([
@@ -39,12 +36,7 @@ class PenulisController extends Controller
         }
     }
 
-    public function edit($id)
-    {
-        $penulis = Penulis::where('id', $id)->first();
-        return view('penulis_admin.edit', compact('penulis'));
-    }
-
+    
     public function update(Request $request, $id)
     {
         $validate = $request->validate([

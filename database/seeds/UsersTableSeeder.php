@@ -16,6 +16,8 @@ class UsersTableSeeder extends Seeder
             'username' => 'admin',
             'posisi' => 'Admin',
             'email' => 'admin@gmail.com',
+            'telepon' => '085678907878',
+            'alamat' => 'Jl. Bunga Bunga',
             'password' => bcrypt('123123')
         ]);
         App\User::create([
@@ -23,6 +25,8 @@ class UsersTableSeeder extends Seeder
             'username' => 'operator',
             'posisi' => 'Operator',
             'email' => 'operator@gmail.com',
+            'telepon' => '085376563454',
+            'alamat' => 'Jl. Biola',
             'password' => bcrypt('123123')
         ]);
         App\User::create([
@@ -30,6 +34,8 @@ class UsersTableSeeder extends Seeder
             'username' => 'kasir',
             'posisi' => 'Kasir',
             'email' => 'kasir@gmail.com',
+            'telepon' => '0852787890909',
+            'alamat' => 'Jl. Pohon Cemara',
             'password' => bcrypt('123123')
         ]);
     }

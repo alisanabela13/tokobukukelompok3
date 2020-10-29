@@ -45,15 +45,8 @@ Buku
                                       <td>{{$b->isbn}}</td>
                                       <td>{{$b->judul}}</td>
                                       <td>{{$b->penulis->nama}}</td>
-                                      <td>Rp. {{$b->harga_jual}},00</td>
+                                      <td>Rp. {{$b->harga}},00</td>
                                   <td>
-                                      {{-- {!! Form::open(['method'=>'delete', 'route'=>['kelas.destroy',$item->id]]) !!}
-                                          <a href="{{route('kelas.edit',['id'=>$item->id])}}" class="btn btn-info"> <i class="fa fa-edit"></i></a>
-                                          <button class="btn btn-danger" onclick="swaldelete({{$item->id}},'kelas',event)"> <i class="fa fa-trash"></i></button>
-                                          <a href="{{ route( 'kelas.detail' ,['id' => $item->id]) }}" class="btn btn-success"> <i class="fa fa-file"></i></a>
-                                      {!! Form::close() !!} --}}
-                                      {{-- <a href="#" class="btn btn-info" title="edit"><i class="fa fa-edit"></i></a>
-                                      <a href="#" class="btn btn-danger" title="hapus"><i class="fa fa-trash"></i></a> --}}
                                       <div class="btn-group">
                                         <a type="submit" class="btn btn-sm btn-info text-white" href="{{ route('buku.edit',  ['id' => $b["id"]]) }}"><i class="fas fa-pencil-alt"></i></a>
                                     </div>

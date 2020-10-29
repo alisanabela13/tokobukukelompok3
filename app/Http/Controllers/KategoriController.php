@@ -17,51 +17,40 @@ class KategoriController extends Controller
         $kategori = $this->Kategori->get();
         return view('kategori_admin.index', compact('kategori'));
     }
-
-    public function create()
-    {
-        return view('Kategori_admin.create');
-    }
     
     public function store(Request $request)
     {
         $validate = $request->validate([
-            'name' => 'required'
+            'nama' => 'required'
         ]);
 
        
         $insert = Kategori::insert([
-            'name' => $request->name
+            'nama' => $request->nama
         ]);
 
         if($insert == true ){
-            return redirect()->route('Kategori')->with(['message' => 'Berhasil Menambah Kategori', 'type' => 'success']);
+            return redirect()->route('kategori')->with(['message' => 'Berhasil Menambah Kategori', 'type' => 'success']);
         } else {
 
-            return redirect()->route('Kategori')->with(['message' => 'Gagal Menambah Kategori', 'type' => 'error']);
+            return redirect()->route('kategori')->with(['message' => 'Gagal Menambah Kategori', 'type' => 'error']);
         }
-    }
-
-    public function edit($id)
-    {
-        $kategori = Kategori::where('id', $id)->first();
-        return view('Kategori_admin.edit', compact('Kategori'));
     }
 
     public function update(Request $request, $id)
     {
         $validate = $request->validate([
-            'name' => 'required'
+            'nama' => 'required'
         ]);
 
         $update = Kategori::where('id', $id)->update([
-            'name' => $request->name
+            'nama' => $request->nama
         ]);
 
         if($update == true) {
-            return redirect()->route('Kategori')->with(['message' => 'Berhasil Mengubah Kategori', 'type' => 'success']);
+            return redirect()->route('kategori')->with(['message' => 'Berhasil Mengubah Kategori', 'type' => 'success']);
         } else {
-            return redirect()->route('Kategori')->with(['message' => 'Gagal Mengubah Kategori', 'type' => 'error']);
+            return redirect()->route('kategori')->with(['message' => 'Gagal Mengubah Kategori', 'type' => 'error']);
         }
     }
 

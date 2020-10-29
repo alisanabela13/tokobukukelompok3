@@ -31,7 +31,7 @@ class BukuController extends Controller
         $penerbit = Penerbit::all();
         $kategori = Kategori::all();
         $Pemasok = Pemasok::all();
-        return view('buku_admin.create', compact('penulis', 'penerbit', 'Kategori', 'Pemasok'));
+        return view('buku_admin.create', compact('penulis', 'penerbit', 'kategori', 'Pemasok'));
     }
 
     public function store(Request $request)
@@ -86,7 +86,7 @@ class BukuController extends Controller
         $Pemasok = Pemasok::all();
         $buku = Buku::where('id', $id)->first();
 
-        return view('buku_admin.edit', compact('penulis', 'penerbit', 'Kategori', 'Pemasok', 'buku'));
+        return view('buku_admin.edit', compact('penulis', 'penerbit', 'kategori', 'Pemasok', 'buku'));
     }
 
     public function update(Request $request, $id)

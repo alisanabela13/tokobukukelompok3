@@ -17,6 +17,11 @@ Route::get('/home', 'HomeController@index')->name('home');
 
 //user
 Route::get('/datauser', 'UserController@index')->name('user');
+Route::get('datauser/create', 'UserController@create')->name('user.create');
+Route::post('datauser/store', 'UserController@store')->name('user.store');
+Route::get('datauser/{id}', 'UserController@edit')->name('user.edit');
+Route::put('datauser/{id}/update', 'UserController@update')->name('user.update');
+Route::delete('datauser/{id}', 'UserController@destroy')->name('user.destroy');
 
 //buku
 Route::get('/databuku', 'BukuController@index')->name('buku');
@@ -30,9 +35,7 @@ Route::delete('databuku/{id}', 'BukuController@destroy')->name('buku.destroy');
 
 //penulis
 Route::get('/penulis', 'PenulisController@index')->name('penulis');
-Route::get('penulis/create', 'PenulisController@create')->name('penulis.create');
 Route::post('penulis/store', 'PenulisController@store')->name('penulis.store');
-Route::get('penulis/{id}', 'PenulisController@edit')->name('penulis.edit');
 Route::put('penulis/{id}/update', 'PenulisController@update')->name('penulis.update');
 Route::delete('penulis/{id}', 'PenulisController@destroy')->name('penulis.destroy');
 
@@ -46,9 +49,7 @@ Route::delete('penerbit/{id}', 'PenerbitController@destroy')->name('penerbit.des
 
 //Kategori
 Route::get('/kategori', 'KategoriController@index')->name('kategori');
-Route::get('kategori/create', 'KategoriController@create')->name('kategori.create');
 Route::post('kategori/store', 'KategoriController@store')->name('kategori.store');
-Route::get('kategori/{id}', 'KategoriController@edit')->name('kategori.edit');
 Route::put('kategori/{id}/update', 'KategoriController@update')->name('kategori.update');
 Route::delete('kategori/{id}', 'KategoriController@destroy')->name('kategori.destroy');
 

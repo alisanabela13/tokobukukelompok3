@@ -4,9 +4,9 @@ TokBuk adalah aplikasi pengelolaan toko buku yang dapat digunakan oleh owner tok
 
 ## Kontributor (Kelompok 3)
 - [Muhammad Novil Fahlevy](https://github.com/novilfahlevy) - Backend Developer
-- [Alisa Nabela Nasrun](https://github.com/alisanabela13) - Backend Developer
+- [Alisanabela Nasrun](https://github.com/alisanabela13) - Backend Developer
 - [Yudha Indra Permana](https://github.com/yudhaip) - Frontend Developer
 - [Roofi Ali Raditya](https://github.com/roopi2203) - Frontend Developer
 - [Farkhanudin](https://github.com/farhan90909) - Frontend Developer
 - Niken Astrid Pradiva Putri - Analis
-- Faris Dwi Januardi - Desainer
+- Fariz Dwi Januardi - Desainer
