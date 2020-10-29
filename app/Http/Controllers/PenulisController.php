@@ -2,8 +2,11 @@
 
 namespace App\Http\Controllers;
 
+use App\Buku;
 use Illuminate\Http\Request;
 use App\Penulis;
+use Exception;
+use Illuminate\Support\Facades\DB;
 
 class PenulisController extends Controller
 {
@@ -56,7 +59,22 @@ class PenulisController extends Controller
     
     public function destroy($id)
     {
-        Penulis::destroy($id);
-        return redirect()->route('penulis', ['id' => $id]);
+        DB::beginTransaction();
+		try {
+			$penulis = Penulis::find($id);
+			Buku::where('id_penulis', $id)->update(['id_penulis' => null]);
+			$penulis->delete();
+			DB::commit();
+			return redirect()->route('penulis')->with('alert', [
+				'type' => 'success',
+				'message' => 'Berhasil menghapus buku'
+			]);
+		} catch ( Exception $e ) {
+			DB::rollBack();
+			return redirect()->route('penulis')->with('alert', [
+				'type' => 'danger',
+				'message' => 'Gagal menghapus buku'
+			]);
+		}
     }
 }

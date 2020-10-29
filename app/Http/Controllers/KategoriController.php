@@ -2,8 +2,11 @@
 
 namespace App\Http\Controllers;
 
+use App\Buku;
 use Illuminate\Http\Request;
 use App\Kategori;
+use Exception;
+use Illuminate\Support\Facades\DB;
 
 class KategoriController extends Controller
 {
@@ -56,8 +59,23 @@ class KategoriController extends Controller
 
     public function destroy($id)
     {
-        Kategori::destroy($id);
-        return redirect()->route('kategori', ['id' => $id]);
+        DB::beginTransaction();
+		try {
+			$kategori = Kategori::find($id);
+			Buku::where('id_kategori', $id)->update(['id_kategori' => null]);
+			$kategori->delete();
+			DB::commit();
+			return redirect()->route('kategori')->with('alert', [
+				'type' => 'success',
+				'message' => 'Berhasil menghapus buku'
+			]);
+		} catch ( Exception $e ) {
+			DB::rollBack();
+			return redirect()->route('kategori')->with('alert', [
+				'type' => 'danger',
+				'message' => 'Gagal menghapus buku'
+			]);
+		}
     }
 
 }
