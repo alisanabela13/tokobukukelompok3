@@ -53,6 +53,15 @@ Pengguna
                                                 </td>
                                                 <td>{{$u->email}}</td>
                                                 <td>
+                                                    @if (auth()->user()->id == $u->id)
+                                                        
+                                                    <div class="btn-group">
+                                                        <a type="submit" class="btn btn-sm btn-info text-white" href="{{ route('user.edit',  ['id' => $u["id"]]) }}"><i class="fas fa-pencil-alt"></i></a>
+                                                    </div>
+                                                    <div class="btn-group">
+                                                        <a type="button" class="btn btn-sm btn-primary text-white" data-toggle="modal" data-target=".bs-example-modal-lg-{{$u->id}}"><i class="fa fa-eye"></i></a>
+                                                    </div>
+                                                    @else 
                                                     <div class="btn-group">
                                                         <a type="submit" class="btn btn-sm btn-info text-white" href="{{ route('user.edit',  ['id' => $u["id"]]) }}"><i class="fas fa-pencil-alt"></i></a>
                                                     </div>
@@ -66,6 +75,7 @@ Pengguna
                                                             <button  class="btn btn-sm btn-danger" id="btn-delete"  ><i class="fa fa-trash"></i></button>
                                                         </form>
                                                     </div>
+                                                    @endif
                                                 </td>
                                             </tr>
                                             {{-- modal --}}
