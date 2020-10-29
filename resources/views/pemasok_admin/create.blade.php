@@ -15,6 +15,11 @@
                     <div class="card">
                         <div class="card-header">
                             <h4>Form Tambah Pemasok Buku</h4>
+                            <div class="card-header-form">
+                                <a href="{{ route('pemasok') }}" class="btn btn-primary">
+                                    <i class="fas fa-chevron-left"></i>
+                                </a>
+                            </div>
                         </div>
                                 <div class="card-body">
                                     <h6>Bila ada tanda <span class="text-danger">*</span> Input tidak boleh dikosongkan.</h6>
@@ -24,22 +29,26 @@
                                         <div class="row">
                                             <div class="col-md-6">
                                                 <div class="form-group">
-                                                    <p>Nama Pemasok*</p>
-                                                    <input type="text" class="form-control" required name="nama" value="{{ old('nama') }}" >
-                                                    <p>Telepon*</p>
-                                                    <input type="number" class="form-control" required name="telepon" value="{{ old('telepon') }}" >
-                                                    <p>E-Mail*</p>
-                                                    <input type="email" class="form-control" required name="email" value="{{ old('email') }}" >
+                                                    <label for="nama">Nama Pemasok*</label>
+                                                    <input type="text" class="form-control" required id="nama" name="nama" value="{{ old('nama') }}" >
+                                                </div>
+                                                <div class="form-group">
+                                                    <label for="telepon">Telepon*</label>
+                                                    <input type="number" class="form-control" required id="telepon" name="telepon" value="{{ old('telepon') }}">
+                                                </div>
+                                                <div class="form-group">
+                                                    <label for="email">Email*</label>
+                                                    <input type="email" class="form-control" required id="email" name="email" value="{{ old('email') }}" >
                                                 </div>
                                             </div>
                                             <div class="col-md-6">
                                                 <div class="form-group">
-                                                    <p>Alamat Pemasok*</p>
-                                                    <textarea type="text" class="form-control" required name="alamat" value="{{ old('alamat') }}" style="height:215px"></textarea>
+                                                    <label for="alamat">Alamat Pemasok*</label>
+                                                    <textarea type="text" class="form-control" required id="alamat" name="alamat" value="{{ old('alamat') }}" style="height:215px"></textarea>
                                                 </div>
                                             </div>
                                           </div>
-                                        <button class="btn btn-primary" type="submit">Tambah</button>
+                                        <button class="btn btn-primary" type="submit">Simpan</button>
                                     </form>
                                 </div>
 

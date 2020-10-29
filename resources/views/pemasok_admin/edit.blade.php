@@ -9,17 +9,22 @@
         <div class="main-content" style="min-height: 116px;">
             <section class="section">
                 <div class="section-header">
-                    <h1>Ubah Pemasok</h1>
+                    <h1>Edit Pemasok</h1>
                 </div>
                 <div class="section-body">
                     <div class="card">
                         <div class="card-header">
-                            <h4>Form Ubah Pemasok</h4>
+                            <h4>Form Edit Pemasok</h4>
+                            <div class="card-header-form">
+                                <a href="{{ route('pemasok') }}" class="btn btn-primary">
+                                    <i class="fas fa-chevron-left"></i>
+                                </a>
+                            </div>
                         </div>
                         <div class="card-body">
                             <h6>Bila ada tanda <span class="text-danger">*</span> Input tidak boleh dikosongkan.</h6>
                             <br><br>
-                            <form action="{{ route('pemasok.update', ['id' => $Pemasok->id]) }}" method="POST" enctype="multipart/form-data" class="needs-validation" novalidate="" >
+                            <form action="{{ route('pemasok.update', ['id' => $pemasok->id]) }}" method="POST" enctype="multipart/form-data" class="needs-validation" novalidate="" >
                                 {{ csrf_field() }}
                                 {{ method_field('PUT') }}
                                 {{-- <div class="row">
@@ -33,22 +38,26 @@
                                 <div class="row">
                                     <div class="col-md-6">
                                         <div class="form-group">
-                                            <p>Nama Pemasok*</p>
-                                        <input type="text" class="form-control" required name="nama" value="{{$Pemasok->nama}}" >
-                                            <p>Telepon*</p>
-                                            <input type="number" class="form-control" required name="telepon" value="{{$Pemasok->telepon}}" >
-                                            <p>E-Mail*</p>
-                                            <input type="email" class="form-control" required name="email" value="{{$Pemasok->email}}" >
+                                            <label for="nama">Nama Pemasok*</label>
+                                            <input type="text" class="form-control" required id="nama" name="nama" value="{{$pemasok->nama}}">
+                                        </div>
+                                        <div class="form-group">
+                                            <label for="telepon">Telepon*</label>
+                                            <input type="number" class="form-control" id="telepon" required name="telepon" value="{{$pemasok->telepon}}">
+                                        </div>
+                                        <div class="form-group">
+                                            <label for="email">Email*</label>
+                                            <input type="email" class="form-control" id="email" required name="email" value="{{$pemasok->email}}" >
                                         </div>
                                     </div>
                                     <div class="col-md-6">
                                         <div class="form-group">
-                                            <p>Alamat Pemasok*</p>
-                                        <textarea type="text" class="form-control" required name="alamat"  style="height:215px">{{$Pemasok->alamat}}</textarea>
+                                            <label for="alamat">Alamat*</label>
+                                            <textarea type="text" class="form-control" id="alamat" required name="alamat"  style="height:215px">{{$pemasok->alamat}}</textarea>
                                         </div>
                                     </div>
                                   </div>
-                                <button class="btn btn-primary" type="submit">Ubah</button>
+                                <button class="btn btn-primary" type="submit">Simpan Perubahan</button>
                             </form>
                         </div>
                     </div>
