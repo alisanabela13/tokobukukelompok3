@@ -17,7 +17,8 @@ Route::get('/home', 'HomeController@index')->name('home');
 
 //profil
 Route::get('/profil', 'ProfilController@index')->name('profil');
-Route::put('/profil/{id}', 'ProfilController@update')->name('profil.update');
+Route::put('/profil/update', 'ProfilController@update')->name('profil.update');
+Route::put('/profil/password', 'ProfilController@changePassword')->name('profil.password');
 
 //user
 Route::get('/datauser', 'UserController@index')->name('user');
