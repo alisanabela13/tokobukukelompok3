@@ -39,7 +39,7 @@
                                                     <div class="row mb-4">
                                                         <div class="col-lg-4 col-5">Kategori</div>
                                                         <div class="col-1 text-right">:</div>
-                                                        <div class="col-lg-6 col-5">{{strtoupper($buku->kategori ? $buku->kategori->name : '')}}</div>
+                                                        <div class="col-lg-6 col-5">{{strtoupper($buku->kategori ? $buku->kategori->nama : '')}}</div>
                                                     </div>
                                                     
                                                     <div class="row mb-4">
@@ -71,12 +71,12 @@
                                                     <div class="row mb-4">
                                                         <div class="col-lg-4 col-5">Jumlah Stok Buku Saat ini</div>
                                                         <div class="col-1 text-right">:</div>
-                                                        <div class="col-lg-6 col-5">{{$buku->jumlah}} buku</div>
+                                                        <div class="col-lg-6 col-5">{{$buku->jumlah}} BUKU</div>
                                                     </div>
                                                     <div class="row mb-4">
                                                         <div class="col-lg-4 col-5">Lokasi Buku</div>
                                                         <div class="col-1 text-right">:</div>
-                                                        <div class="col-lg-6 col-5">{{$buku->lokasi ? $buku->lokasi->nama : ''}}</div>
+                                                        <div class="col-lg-6 col-5">{{strtoupper($buku->lokasi ? $buku->lokasi->nama : '')}}</div>
                                                     </div>
                                                 </div>
                                               </div>

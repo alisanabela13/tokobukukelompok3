@@ -69,7 +69,7 @@ class BukuController extends Controller
             'id_penerbit' => $request->id_penerbit,
             'id_kategori' => $request->id_kategori,
             'id_pemasok' => $request->id_pemasok,
-            'id_lokasi' => $request->lokasi,
+            'id_lokasi' => $request->id_lokasi,
             'harga' => $request->harga,
             'jumlah' => $request->jumlah,
 

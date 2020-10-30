@@ -43,7 +43,7 @@ class Buku extends Model
         return $this->belongsTo(Pemasok::class, 'id_pemasok');
     }
 
-    public function Lokasi()
+    public function lokasi()
     {
         return $this->belongsTo(Lokasi::class, 'id_lokasi');
     }
