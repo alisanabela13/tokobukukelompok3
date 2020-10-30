@@ -69,11 +69,13 @@ class UserController extends Controller
             'telepon' => 'required'
         ]);
 
-        $update = User::where('id', $id)->update([
+        $user = User::where('id', $id);
+
+        $update = $user->update([
             'name' => $request->name,
-            'username' => $request->username,
+            'username' => $request->username ?? $user->first()->username,
             'posisi' => $request->posisi,
-            'email' => $request->email,
+            'email' => $request->email ?? $user->first()->email,
             'alamat' => $request->alamat,
             'telepon' => $request->telepon
         ]);
