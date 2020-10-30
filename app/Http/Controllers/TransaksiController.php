@@ -50,12 +50,16 @@ class TransaksiController extends Controller
 			]);
 
 			foreach ( $transaksi->buku as $buku ) {
+				$bukuLama = Buku::find($buku->idBuku);
+
 				DetailTransaksi::create([
 					'id_transaksi' => $transaksiBaru->id,
 					'id_buku' => $buku->idBuku,
 					'jumlah' => $buku->jumlah,
 					'harga' => $buku->harga
 				]);
+
+				$bukuLama->update(['jumlah' => $bukuLama->jumlah - $buku->jumlah]);
 			}
 
 			DB::commit();

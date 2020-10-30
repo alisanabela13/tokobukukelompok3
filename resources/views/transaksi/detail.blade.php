@@ -65,7 +65,7 @@ Detail Transaksi
                       <th>{{ $t->buku->judul }}</th>
                       <th>{{ $t->jumlah }}</th>
                       <th>Rp {{ $t->buku->harga }}</th>
-                      <th>{{ $t->harga }}</th>
+                      <th>Rp {{ $t->harga }}</th>
                     </tr>
                   @endforeach
                 </tbody>
