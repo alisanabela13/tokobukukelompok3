@@ -72,7 +72,7 @@
                                                     <p>Foto Cover Buku* (abaikan jika tidak ingin mengubah)</p>
                                                     <div class="input-group mb-3">
                                                         <div class="custom-file">
-                                                            <input type="file" id= "file" name= "file" class="custom-file-input" id="inputGroupFile01" value="{{$buku->file}}">
+                                                            <input type="file" id= "file" name= "sampul" class="custom-file-input" id="inputGroupFile01" value="{{$buku->file}}">
                                                             <label class="custom-file-label" for="inputGroupFile01">Choose file</label>
                                                         </div>
                                                     </div>
