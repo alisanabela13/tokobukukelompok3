@@ -28,7 +28,7 @@
                                             Nama*
                                             <input type="text" class="form-control" required name="name" value="{{$user->name}}" ><br/>
                                             Username*
-                                            <input type="text" class="form-control @error('username') is-invalid @enderror" required name="username" value="{{$user->username}}" >
+                                            <input type="text" class="form-control @error('username') is-invalid @enderror" name="username" placeholder="{{$user->username}}" >
                                             @error('username')
                                                 <span class="invalid-feedback" role="alert">
                                                      <strong>{{ $message }}</strong>
@@ -53,7 +53,7 @@
                                             </select>
                                             <br/>
                                             E-Mail*
-                                            <input type="text" class="form-control @error('email') is-invalid @enderror" required name="email" value="{{$user->email}}" >
+                                            <input type="text" class="form-control @error('email') is-invalid @enderror" name="email" placeholder="{{$user->email}}" >
                                             @error('email')
                                                 <span class="invalid-feedback" role="alert">
                                                     <strong>{{ $message }}</strong>

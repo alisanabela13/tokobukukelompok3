@@ -9,6 +9,7 @@ use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\SoftDeletes;
 class User extends Authenticatable
 {
+    Use SoftDeletes;
     use Notifiable;
 
     /**

@@ -74,9 +74,9 @@
                                                         <div class="col-lg-6 col-5">{{$buku->jumlah}} buku</div>
                                                     </div>
                                                     <div class="row mb-4">
-                                                        <div class="col-lg-4 col-5">RAK BUKU</div>
+                                                        <div class="col-lg-4 col-5">Lokasi Buku</div>
                                                         <div class="col-1 text-right">:</div>
-                                                        <div class="col-lg-6 col-5">{{$buku->lokasi}}</div>
+                                                        <div class="col-lg-6 col-5">{{$buku->lokasi ? $buku->lokasi->nama : ''}}</div>
                                                     </div>
                                                 </div>
                                               </div>

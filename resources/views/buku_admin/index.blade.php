@@ -45,7 +45,7 @@ Buku
                                       <td>{{$b->judul}}</td>
                                       <td>{{$b->Kategori->nama}}</td>
                                       <td>{{$b->jumlah}}</td>
-                                      <td>Rp. {{$b->harga_jual}},00</td>
+                                      <td>Rp. {{$b->harga}},00</td>
                                   <td>
                                       <div class="btn-group">
                                         <a type="submit" class="btn btn-sm btn-info text-white" href="{{ route('buku.edit',  ['id' => $b["id"]]) }}"><i class="fas fa-pencil-alt"></i></a>

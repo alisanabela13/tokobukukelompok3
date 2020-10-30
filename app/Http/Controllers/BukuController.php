@@ -60,7 +60,7 @@ class BukuController extends Controller
         $get_name = $sampul->getClientOriginalName();
         $sampul->move(public_path('images/buku/'), $get_name);
 
-        $buku = Buku::insert([
+        $buku = Buku::create([
             'sampul' => $get_name,
             'isbn' => $request->isbn,
             'judul' => $request->judul,
@@ -75,21 +75,18 @@ class BukuController extends Controller
 
             
         ]);
-
-        $buku = Buku::where('id', $id)->first();
-        
         $logbuku = LogBuku::create([
-            'id_buku' => $request->buku->id,
+            'id_buku' => $buku->id,
             'id_user' => auth()->user()->id,
             'harga_jual' => $request->harga_jual,
             'harga_beli' => $request->harga_beli,
-            'jumlah' => $request->buku->jumlah,
+            'jumlah' => $request->jumlah,
             'status' => 'Baru'
         ]);
 
        
 
-        if($insert == true ){
+        if($buku == true ){
             return redirect()->route('buku')->with(['message' => 'Berhasil Menambah Buku', 'type' => 'success']);
         } else {
             return redirect()->route('buku')->with(['message' => 'Gagal Menambah Buku', 'type' => 'error']);
@@ -133,7 +130,7 @@ class BukuController extends Controller
           $buku = Buku::where('id', $id);
 
           $update = $buku->update([
-            'sampul' => $request->file ? $get_name : $buku->first()->file,
+            'sampul' => $request->sampul ? $get_name : $buku->first()->sampul,
             'isbn' => $request->isbn,
             'judul' => $request->judul,
             'id_penulis' => $request->id_penulis,
@@ -162,7 +159,8 @@ class BukuController extends Controller
         $penerbit = Penerbit::where('id', $id)->first();
         $kategori = Kategori::where('id', $id)->first();
         $Pemasok = Pemasok::where('id', $id)->first();
-        return view('buku_admin.detail', compact('buku', 'penulis', 'penerbit', 'kategori', 'Pemasok'));
+        $lokasi = Lokasi::where('id', $id)->first();
+        return view('buku_admin.detail', compact('buku', 'penulis', 'penerbit', 'kategori', 'Pemasok', 'lokasi'));
     }
 
     public function destroy($id)

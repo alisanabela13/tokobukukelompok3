@@ -136,7 +136,7 @@ $(".custom-file-input").on("change", function() {
                                                     <div class="card-header"><h4>Foto Cover Depan</h4></div>
                                                     <div class="card-body text-dark">
                                                         <img src="http://placehold.it/" id="showgambar"alt="" style="width:100%; height:85%;"><br/><br/>
-                                                            <input type="file" class="form-control validate" id="inputgambar"required name="sampul" value="{{isset($insert) ? $insert->file : ''}}" >
+                                                            <input type="file" class="form-control validate" id="inputgambar"required name="sampul" value="{{isset($insert) ? $insert->sampul : ''}}" >
                                                         
                                                     </div>
                                                 </div>

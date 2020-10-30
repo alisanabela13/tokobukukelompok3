@@ -62,18 +62,20 @@ class UserController extends Controller
         
         $validate = $request->validate([
             'name' => 'required',
-            'username' => 'required|unique:users,username,{$id},id,deleted_at,NULL', 
+            'username' => 'unique:users,username,{$id},id,deleted_at,NULL', 
             'posisi' => 'required',
-            'email' => 'required|unique:users,email,{$id},id,deleted_at,NULL',
+            'email' => 'unique:users,email,{$id},id,deleted_at,NULL',
             'alamat' => 'required',
             'telepon' => 'required'
         ]);
 
-        $update = User::where('id', $id)->update([
+        $user = User::where('id', $id);
+
+        $update = $user->update([
             'name' => $request->name,
-            'username' => $request->username,
+            'username' => $request->username ?? $user->first()->username,
             'posisi' => $request->posisi,
-            'email' => $request->email,
+            'email' => $request->email ?? $user->first()->email,
             'alamat' => $request->alamat,
             'telepon' => $request->telepon
         ]);
