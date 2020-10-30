@@ -66,6 +66,7 @@
   <script src="https://cdn.jsdelivr.net/npm/select2@4.0.12/dist/js/select2.min.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/summernote@0.8.16/dist/summernote.min.js"></script>
   @stack('js')
+  @stack('css')
   <script>
     $(function () {
         $("#table-index").DataTable();
@@ -89,13 +90,13 @@
               confirmButtonText: 'Hapus!'
               }).then((result) => {
           if (result.value) {
-              Swal.fire({
-                      position: 'center',
-                      icon: 'success',
-                      title: 'Data Terhapus',
-                      showConfirmButton: false,
-                      timer: 1500
-                  });
+              // Swal.fire({
+              //         position: 'center',
+              //         icon: 'success',
+              //         title: 'Data Terhapus',
+              //         showConfirmButton: false,
+              //         timer: 1500
+              //     });
               form.submit();
           }
       });

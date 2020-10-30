@@ -21,15 +21,15 @@
       </li>
 
       @if ( $posisi === 'Admin' || $posisi === 'Kasir' )
-        <li class="nav-item">
-          <a class="nav-link" href="#">
+        <li class="nav-item {{Request::segment(1)=='transaksi' ?'active':''}}">
+          <a class="nav-link" href="{{ route('transaksi') }}">
             <i class="fas fa-dollar-sign"></i><span>Transaksi</span>
           </a>
         </li>
       @endif
 
       @if ( $posisi === 'Admin' || $posisi === 'Operator' )
-        <li class="nav-item  {{Request::segment(1)=='datauser' ?'active':''}}">
+        <li class="nav-item {{Request::segment(1)=='datauser' ?'active':''}}">
           <a class="nav-link" href="{{route('user')}}" aria-expanded="false">
             <i class="fas fa-users"></i> <span>Pengguna</span>
           </a>

@@ -72,3 +72,12 @@ Route::get('lokasi', 'LokasiController@index')->name('lokasi');
 Route::post('lokasi/store', 'LokasiController@store')->name('lokasi.store');
 Route::put('lokasi/{id}/update', 'LokasiController@update')->name('lokasi.update');
 Route::delete('lokasi/{id}', 'LokasiController@destroy')->name('lokasi.destroy');
+
+//transaksi
+Route::get('transaksi', 'TransaksiController@index')->name('transaksi');
+Route::get('transaksi/create', 'TransaksiController@create')->name('transaksi.create');
+Route::post('transaksi/store', 'TransaksiController@store')->name('transaksi.store');
+Route::get('transaksi/edit/{id}', 'TransaksiController@edit')->name('transaksi.edit');
+Route::put('transaksi/update/{id}', 'TransaksiController@update')->name('transaksi.update');
+Route::get('transaksi/{id}/detail', 'TransaksiController@detail')->name('transaksi.detail');
+Route::delete('transaksi/{id}', 'TransaksiController@destroy')->name('transaksi.destroy');
