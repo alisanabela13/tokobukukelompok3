@@ -31,6 +31,7 @@ class CreateBukuTable extends Migration
             $table->foreign('id_lokasi')->references('id')->on('lokasi');  
             $table->integer('harga');
             $table->string('jumlah');
+            $table->softDeletes();
             $table->timestamps();
         });
     }
