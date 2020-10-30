@@ -51,9 +51,9 @@ class BukuController extends Controller
 
         ]);
         
-        $file = $request->file('file');
-        $get_name = $file->getClientOriginalName();
-        $file->move(public_path('buku/'), $get_name);
+        $sampul = $request->file('sampul');
+        $get_name = $sampul->getClientOriginalName();
+        $sampul->move(public_path('images/buku/'), $get_name);
 
         $insert = Buku::insert([
             'sampul' => $get_name,
@@ -92,7 +92,7 @@ class BukuController extends Controller
     public function update(Request $request, $id)
     {
         $validate = $request->validate([
-            'file' => 'max:2048',
+            'sampul' => 'max:2048',
             'isbn' => 'required',
             'judul' => 'required',
             'id_penulis' => 'required',
@@ -106,16 +106,16 @@ class BukuController extends Controller
             'jumlah' => 'required',
         ]);
 
-        if ( $request->file ) {
-            $file = $request->file('file');
-            $get_name = $file->getClientOriginalName();
-            $file->move(public_path('buku/'), $get_name);
+        if ( $request->sampul ) {
+            $sampul = $request->file('sampul');
+            $get_name = $sampul->getClientOriginalName();
+            $sampul->move(public_path('images/buku/'), $get_name);
           }
 
           $buku = Buku::where('id', $id);
 
           $update = $buku->update([
-            'file' => $request->file ? $get_name : $buku->first()->file,
+            'sampul' => $request->file ? $get_name : $buku->first()->file,
             'isbn' => $request->isbn,
             'judul' => $request->judul,
             'id_penulis' => $request->id_penulis,

@@ -41,7 +41,7 @@ Buku
                                       @foreach ($buku as $b)
                                       <tr>
                                       <td>{{$loop->index+1}}</td>
-                                      <td><img src="{{ asset('buku/'.$b->file) }}" alt="" style="width:80px; height:100px; margin-top:9px"></td>
+                                      <td><img src="{{ asset('images/buku/'.$b->sampul) }}" alt="" style="width:80px; height:100px; margin-top:9px"></td>
                                       <td>{{$b->isbn}}</td>
                                       <td>{{$b->judul}}</td>
                                       <td>{{$b->penulis->nama}}</td>
