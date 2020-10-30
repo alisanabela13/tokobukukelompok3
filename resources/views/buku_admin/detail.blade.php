@@ -18,7 +18,7 @@
                                             <div class="card border-dark mb-3" style="max-width: 50rem; height:450px">
                                                 <div class="card-header"><h4>Foto Cover Depan</h4></div>
                                                 <div class="card-body text-dark">
-                                                    <td><img src="{{ asset('buku/'.$buku->file) }}" alt="" style="width:100%; height:100%;"></td>
+                                                    <td><img src="{{ asset('images/buku/'.$buku->sampul) }}" alt="" style="width:100%; height:100%;"></td>
                                                 </div>
                                               </div>
                                         </div>

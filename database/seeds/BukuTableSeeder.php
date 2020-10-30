@@ -12,7 +12,7 @@ class BukuTableSeeder extends Seeder
     public function run()
     {
         App\Buku::create([
-            'sampul' => 'sampul.jpg',
+            'sampul' => 'sampul.png',
             'isbn' => '9786022202417',
             'judul' => 'Janshen',
             'tahun_terbit' => 2015,
@@ -25,7 +25,7 @@ class BukuTableSeeder extends Seeder
             'jumlah' => 80
         ]);
         App\Buku::create([
-            'sampul' => 'default.jpg',
+            'sampul' => 'sampul.png',
             'isbn' => '979103504504',
             'judul' => 'RPUL',
             'tahun_terbit' => 2017,
