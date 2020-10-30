@@ -1,7 +1,7 @@
 /node_modules
 /public/hot
 /public/storage
-/public/buku/*
+/public/images/buku/*
 /storage/*.key
 /vendor
 .env
