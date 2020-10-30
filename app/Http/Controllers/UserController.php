@@ -22,13 +22,13 @@ class UserController extends Controller
         return view('user_admin.create');
     }
 
-    public function store(Request $request)
+    public function store(Request $request )
     {
         $validate = $request->validate([
             'name' => 'required',
-            'username' => 'required|unique:users',
+            'username' => 'required|unique:users,username,{$id},id,deleted_at,NULL',
             'posisi' => 'required',
-            'email' => 'required|unique:users',
+            'email' => 'required|unique:users,email,{$id},id,deleted_at,NULL',
             'telepon' => 'required',
             'alamat' => 'required',
             'password' => 'required|confirmed|min:6'
@@ -59,11 +59,12 @@ class UserController extends Controller
 
     public function update(Request $request, $id)
     {
+        
         $validate = $request->validate([
             'name' => 'required',
-            'username' => 'required',
+            'username' => 'required|unique:users,username,{$id},id,deleted_at,NULL', 
             'posisi' => 'required',
-            'email' => 'required',
+            'email' => 'required|unique:users,email,{$id},id,deleted_at,NULL',
             'alamat' => 'required',
             'telepon' => 'required'
         ]);

@@ -8,15 +8,17 @@ use App\Penulis;
 use App\Penerbit;
 use App\Kategori;
 use App\Pemasok;
+use App\Lokasi;
 
 class BukuController extends Controller
 {
-    public function __construct(Buku $buku, Penulis $penulis, Penerbit $penerbit, Kategori $kategori, Pemasok $Pemasok)
+    public function __construct(Buku $buku, Penulis $penulis, Penerbit $penerbit, Kategori $kategori, Pemasok $Pemasok, Lokasi $lokasi)
     {
         $this->buku = $buku;
         $this->penulis = $penulis;
         $this->penerbit = $penerbit;
-        $this->Kategori = $kategori;
+        $this->kategori = $kategori;
+        $this->lokasi = $lokasi;
     }
     public function index()
     {
@@ -31,7 +33,8 @@ class BukuController extends Controller
         $penerbit = Penerbit::all();
         $kategori = Kategori::all();
         $Pemasok = Pemasok::all();
-        return view('buku_admin.create', compact('penulis', 'penerbit', 'kategori', 'Pemasok'));
+        $lokasi = Lokasi::all();
+        return view('buku_admin.create', compact('penulis', 'penerbit', 'kategori', 'Pemasok', 'lokasi'));
     }
 
     public function store(Request $request)

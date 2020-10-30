@@ -28,7 +28,12 @@
                                             Nama*
                                             <input type="text" class="form-control" required name="name" value="{{$user->name}}" ><br/>
                                             Username*
-                                            <input type="text" class="form-control" required name="username" value="{{$user->username}}" >
+                                            <input type="text" class="form-control @error('username') is-invalid @enderror" required name="username" value="{{$user->username}}" >
+                                            @error('username')
+                                                <span class="invalid-feedback" role="alert">
+                                                     <strong>{{ $message }}</strong>
+                                                </span>
+                                            @enderror
                                             <br/>
                                             Posisi*
                                             <select name="posisi" class="form-control" value="{{ old('posisi') }}">
@@ -48,7 +53,12 @@
                                             </select>
                                             <br/>
                                             E-Mail*
-                                            <input type="text" class="form-control" required name="email" value="{{$user->email}}" >
+                                            <input type="text" class="form-control @error('email') is-invalid @enderror" required name="email" value="{{$user->email}}" >
+                                            @error('email')
+                                                <span class="invalid-feedback" role="alert">
+                                                    <strong>{{ $message }}</strong>
+                                                </span>
+                                            @enderror
                                         </div>
                                     </div>
                                     <div class="col-md-6">
