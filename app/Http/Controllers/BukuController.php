@@ -118,7 +118,7 @@ class BukuController extends Controller
           $buku = Buku::where('id', $id);
 
           $update = $buku->update([
-            'sampul' => $request->file ? $get_name : $buku->first()->file,
+            'sampul' => $request->sampul ? $get_name : $buku->first()->sampul,
             'isbn' => $request->isbn,
             'judul' => $request->judul,
             'id_penulis' => $request->id_penulis,
