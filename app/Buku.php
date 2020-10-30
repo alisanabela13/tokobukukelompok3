@@ -45,4 +45,9 @@ class Buku extends Model
         return $this->belongsTo(Lokasi::class, 'id_lokasi');
     }
 
+    public function logbuku()
+    {
+        return $this->hasMany(LogBuku::class, 'id_buku');
+    }
+
 }

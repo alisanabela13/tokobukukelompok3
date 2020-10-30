@@ -136,7 +136,7 @@ $(".custom-file-input").on("change", function() {
                                                     <div class="card-header"><h4>Foto Cover Depan</h4></div>
                                                     <div class="card-body text-dark">
                                                         <img src="http://placehold.it/" id="showgambar"alt="" style="width:100%; height:85%;"><br/><br/>
-                                                            <input type="file" class="form-control validate" id="inputgambar"required name="file" value="{{isset($insert) ? $insert->file : ''}}" >
+                                                            <input type="file" class="form-control validate" id="inputgambar"required name="sampul" value="{{isset($insert) ? $insert->file : ''}}" >
                                                         
                                                     </div>
                                                 </div>
@@ -191,12 +191,6 @@ $(".custom-file-input").on("change", function() {
                                                                     Tahun Terbit Buku*
                                                                     <input type="number" class="form-control" required name="tahun_terbit" value="{{ old('tahun_terbit') }}" >
                                                                     <br/>
-                                                                    Harga Beli Buku (Per satuan)*
-                                                                    <input type="number" class="form-control" required name="harga_beli" value="{{ old('harga_beli') }}" >
-                                                                    <br/>
-                                                                    Harga Jual Buku (Per satuan)*
-                                                                    <input type="number" class="form-control" required name="harga_jual" value="{{ old('harga_jual') }}" >
-                                                                    <br/>
                                                                     Lokasi Buku*
                                                                     <select required name="id_lokasi" class="form-control" value="{{ old('id_lokasi') }}" data-live-search="true">
                                                                         <option value=''>- Pilih -</option>
@@ -205,7 +199,16 @@ $(".custom-file-input").on("change", function() {
                                                                         @endforeach
                                                                     </select>
                                                                     <br/>
-                                                                    Jumlah Stok Saat Ini*
+                                                                    Harga Beli Dari Pemasok*
+                                                                    <input type="number" class="form-control" required name="harga_beli" value="{{ old('harga_beli') }}" >
+                                                                    <br/>
+                                                                    Harga Jual Dari Pemasok*
+                                                                    <input type="number" class="form-control" required name="harga_jual" value="{{ old('harga_jual') }}" >
+                                                                    <br/>
+                                                                    Harga Buku*
+                                                                    <input type="number" class="form-control" required name="harga" value="{{ old('harga') }}" >
+                                                                    <br/>
+                                                                    Jumlah Stok*
                                                                     <input type="number" class="form-control" required name="jumlah" value="{{ old('jumlah') }}" >
 
                                                                 </div>

@@ -9,16 +9,18 @@ use App\Penerbit;
 use App\Kategori;
 use App\Pemasok;
 use App\Lokasi;
+use App\LogBuku;
 
 class BukuController extends Controller
 {
-    public function __construct(Buku $buku, Penulis $penulis, Penerbit $penerbit, Kategori $kategori, Pemasok $Pemasok, Lokasi $lokasi)
+    public function __construct(Buku $buku, Penulis $penulis, Penerbit $penerbit, Kategori $kategori, Pemasok $Pemasok, Lokasi $lokasi, LogBuku $logbuku)
     {
         $this->buku = $buku;
         $this->penulis = $penulis;
         $this->penerbit = $penerbit;
         $this->kategori = $kategori;
         $this->lokasi = $lokasi;
+        $this->logbuku = $logbuku;
     }
     public function index()
     {
@@ -49,7 +51,7 @@ class BukuController extends Controller
             'id_kategori' => 'required',
             'id_pemasok' => 'required',
             'id_lokasi' => 'required',
-            'harga' => 'required',
+            'harga_jual' => 'required',
             'jumlah' => 'required'
 
         ]);
@@ -58,7 +60,7 @@ class BukuController extends Controller
         $get_name = $sampul->getClientOriginalName();
         $sampul->move(public_path('images/buku/'), $get_name);
 
-        $insert = Buku::insert([
+        $buku = Buku::insert([
             'sampul' => $get_name,
             'isbn' => $request->isbn,
             'judul' => $request->judul,
@@ -71,8 +73,21 @@ class BukuController extends Controller
             'harga' => $request->harga,
             'jumlah' => $request->jumlah,
 
-
+            
         ]);
+
+        $buku = Buku::where('id', $id)->first();
+        
+        $logbuku = LogBuku::create([
+            'id_buku' => $request->buku->id,
+            'id_user' => auth()->user()->id,
+            'harga_jual' => $request->harga_jual,
+            'harga_beli' => $request->harga_beli,
+            'jumlah' => $request->buku->jumlah,
+            'status' => 'Baru'
+        ]);
+
+       
 
         if($insert == true ){
             return redirect()->route('buku')->with(['message' => 'Berhasil Menambah Buku', 'type' => 'success']);

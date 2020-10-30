@@ -29,11 +29,11 @@ Buku
                                     <thead style="">
                                         <tr>
                                             <th>No</th>
-                                            <th>Foto</th>
                                             <th>ISBN</th>
                                             <th>Judul Buku</th>
-                                            <th>Penulis</th>
-                                            <th>Harga Jual</th>
+                                            <th>Kategori</th>
+                                            <th>Jumlah</th>
+                                            <th>Harga</th>
                                             <th>Aksi</th>
                                         </tr>
                                     </thead>
@@ -41,11 +41,11 @@ Buku
                                       @foreach ($buku as $b)
                                       <tr>
                                       <td>{{$loop->index+1}}</td>
-                                      <td><img src="{{ asset('images/buku/'.$b->sampul) }}" alt="" style="width:80px; height:100px; margin-top:9px"></td>
                                       <td>{{$b->isbn}}</td>
                                       <td>{{$b->judul}}</td>
-                                      <td>{{$b->penulis->nama}}</td>
-                                      <td>Rp. {{$b->harga}},00</td>
+                                      <td>{{$b->Kategori->nama}}</td>
+                                      <td>{{$b->jumlah}}</td>
+                                      <td>Rp. {{$b->harga_jual}},00</td>
                                   <td>
                                       <div class="btn-group">
                                         <a type="submit" class="btn btn-sm btn-info text-white" href="{{ route('buku.edit',  ['id' => $b["id"]]) }}"><i class="fas fa-pencil-alt"></i></a>
@@ -58,7 +58,7 @@ Buku
                                         </form>
                                     </div>
                                       <div class="btn-group">
-                                        <a href="{{ route( 'buku.detail' ,['id' => $b->id]) }}" class="btn btn-sm btn-success text-white"><i class="fas fa fa-file"></i></a>
+                                        <a href="{{ route( 'buku.detail' ,['id' => $b->id]) }}" class="btn btn-sm btn-primary text-white"><i class="fa fa-eye"></i></i></a>
                                     </div>
                                   </td>
                               </tr>
